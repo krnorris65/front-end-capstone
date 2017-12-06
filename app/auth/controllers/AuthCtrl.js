@@ -21,7 +21,7 @@ angular.module("LifeReelApp")
 			AuthFactory.authenticate(credentials).then(function (didLogin) {
 				$scope.login = {}
 				$scope.register = {}
-				$location.url("/events")
+				$location.url("/landing")
 			})
 		}
 

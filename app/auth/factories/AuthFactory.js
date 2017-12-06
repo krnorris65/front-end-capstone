@@ -1,6 +1,27 @@
 angular.module("LifeReelApp")
-	.factory("AuthFactory", function($http) {
+	.factory("AuthFactory", function($http, $location, $timeout, $route) {
 		let currentUserData = null
+
+		firebase.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				currentUserData = user
+	
+				if ($location.url() !== "/landing") {
+					$timeout(function () {
+						$location.url("/landing")
+					}, 100)
+				} else {
+					$route.reload()
+				}
+	
+			} else {
+				currentUserData = null
+				console.log("User is not authenticated")
+				$timeout(function () {
+					$location.url("/auth")
+				}, 100)
+			}
+		}) 
 
 		return Object.create(null, {
 			isAuthenticated: {

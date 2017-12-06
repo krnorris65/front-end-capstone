@@ -21,8 +21,8 @@ angular.module("LifeReelApp").config(function ($routeProvider) {
 			templateUrl: "app/auth/partials/register.html",
 			controller: "AuthCtrl"
 		})
-		.when("/events", {
-			templateUrl: "app/events/partials/events.html",
+		.when("/landing", {
+			templateUrl: "app/events/partials/landing.html",
 			controller: "AuthCtrl"
 		})
 		.otherwise("/auth")

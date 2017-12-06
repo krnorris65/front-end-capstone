@@ -14,6 +14,19 @@ angular.module("LifeReelApp")
 							console.log(error)
 						})
 				}
+			},
+			"userList": {
+				value: function () {
+					return firebase.auth().currentUser.getToken(true)
+						.then(idToken => {
+							return $http({
+								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}`,
+								"method": "GET"
+							})
+						}).catch(function(error) {
+							console.log(error)
+						})
+				}
 			}
 		})
 	})
