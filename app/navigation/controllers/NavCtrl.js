@@ -5,7 +5,6 @@ angular.module("LifeReelApp").controller("NavCtrl",
     same name.
     */
 		$scope.isAuthenticated = () => AuthFactory.isAuthenticated()
-		debugger
 		/*
     Unauthenticate the client.
     */

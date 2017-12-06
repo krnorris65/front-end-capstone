@@ -21,11 +21,17 @@ angular.module("LifeReelApp")
 			authenticate: {
 				value: credentials => {
 					return firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)
+						.catch(function(error) {
+							alert(error)
+						})
 				}
 			},
 			registerWithEmail: {
 				value: user => {
 					return firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+						.catch(function(error) {
+							alert(error)
+						})
 				}
 			}
 		})
