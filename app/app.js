@@ -13,6 +13,14 @@ angular.module("LifeReelApp").config(function ($routeProvider) {
 			templateUrl: "app/auth/partials/auth.html",
 			controller: "AuthCtrl"
 		})
+		.when("/login", {
+			templateUrl: "app/auth/partials/login.html",
+			controller: "AuthCtrl"
+		})
+		.when("/register", {
+			templateUrl: "app/auth/partials/register.html",
+			controller: "AuthCtrl"
+		})
 		.otherwise("/auth")
 
 })

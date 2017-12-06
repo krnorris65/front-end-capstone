@@ -1,17 +1,32 @@
-app.controller("AuthCtrl", function($scope, AuthFactory) {
-	$scope.auth = {}
-  
-	$scope.registerUser = function(registerNewUser) {
-		AuthFactory.registerWithEmail(registerNewUser).then(function(didRegister) {
-			console.log(didRegister)
-		})
-	}
+angular.module("LifeReelApp")
+	.controller("AuthCtrl", function($scope, $location, AuthFactory) {
+		$scope.auth = {}
 
-	$scope.loginUser = function () {
-		AuthFactory.authenticate($scope.auth).then(function (didLogin) {
-			$scope.login = {}
-			$scope.register = {}
-			$location.url("/")
-		})
-	}
-})
+		$scope.loginButton = () => {
+			$location.url("/login")
+		}
+
+		$scope.registerButton = () => {
+			$location.url("/register")
+		}
+
+		$scope.loginUser = function (credentials) {
+			AuthFactory.authenticate(credentials).then(function (didLogin) {
+				$scope.login = {}
+				$scope.register = {}
+				$location.url("/")
+			})
+		}
+
+		$scope.registerUser = function(registerNewUser) {
+			AuthFactory.registerWithEmail(registerNewUser).then(function (didRegister) {
+				loginUser(registerNewUser)
+			})
+		}
+
+		$scope.logoutUser = function(){
+			AuthFactory.logout()
+			$location.url("/auth")
+		}
+
+	})
