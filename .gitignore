@@ -1,3 +1,3 @@
 lib
 .DS_Store
-app.config.js
+app/app.config.js
