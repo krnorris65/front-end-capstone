@@ -11,7 +11,7 @@ app.controller("AuthCtrl", function($scope, AuthFactory) {
 		AuthFactory.authenticate($scope.auth).then(function (didLogin) {
 			$scope.login = {}
 			$scope.register = {}
-			$location.url("/employees/list")
+			$location.url("/")
 		})
 	}
 })
