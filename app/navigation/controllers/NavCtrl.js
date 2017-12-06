@@ -1,5 +1,6 @@
 angular.module("LifeReelApp").controller("NavCtrl",
 	function ($scope, AuthFactory) {
+		
 		/*
     Just a pass-through method to the AuthFactory method of the
     same name.
@@ -9,6 +10,9 @@ angular.module("LifeReelApp").controller("NavCtrl",
     Unauthenticate the client.
     */
 		$scope.logout = () => AuthFactory.logout()
+
+
+		
 
 	}
 )

@@ -14,6 +14,9 @@ angular.module("LifeReelApp")
 							console.log(error)
 						})
 				}
-			},
+			}
 		})
 	})
+
+
+	
