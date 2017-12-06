@@ -9,6 +9,8 @@
 </head>
 <body ng-app="LifeReelApp">
 
+    <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
+
     <div ng-view></div>
 
 
@@ -22,6 +24,8 @@
     <script src="./app/auth/factories/AuthFactory.js"></script>
     <script src="./app/auth/factories/UserFactory.js"></script>
     <script src="./app/auth/controllers/AuthCtrl.js"></script>
+
+    <script src="./app/navigation/controllers/NavCtrl.js"></script>
 
 </body>
 </html>

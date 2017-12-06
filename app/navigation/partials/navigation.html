@@ -1,0 +1,11 @@
+<ul ng-controller="NavCtrl">
+        <li><a href="#">Testing</a></li>
+        <li><a href="#">This</a></li>
+    
+        <li class="align-right">
+            <span ng-if="isAuthenticated()">
+                <a href="#" ng-click="logout()">Logout</a>
+            </span>
+        </li>
+    
+</ul>
