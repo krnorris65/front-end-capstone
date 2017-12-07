@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-	.factory("UserFactory", function($http) {
+	.factory("UserFactory", function($http, AuthFactory) {
 		return Object.create(null, {
 			"cache": {
 				value: null,
@@ -26,11 +26,12 @@ angular.module("LifeReelApp")
 				}
 			},
 			"currentUser": {
-				value: function (currentUid) {
+				value: function () {
 					return firebase.auth().currentUser.getToken(true)
 						.then(idToken => {
+							console.log(idToken)
 							return $http({
-								"url": `https://firebaseURL/users.json?orderBy="uid"&equalTo="${currentUid}"&auth=${idToken}`,
+								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}&orderBy="uid"&equalTo="${AuthFactory.getUser().uid}"`,
 								"method": "GET"
 							})
 						})

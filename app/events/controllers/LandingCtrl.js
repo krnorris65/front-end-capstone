@@ -24,7 +24,7 @@ angular.module("LifeReelApp")
         //     } 
         // )
 
-        const thisUser = UserFactory.currentUser(userId)
+        const thisUser = UserFactory.currentUser()
         console.log("this", thisUser)
 
 
