@@ -29,11 +29,13 @@ angular.module("LifeReelApp")
 				value: function () {
 					return firebase.auth().currentUser.getToken(true)
 						.then(idToken => {
-							console.log(idToken)
+							const currentAuthUserId = AuthFactory.getUser().uid
 							return $http({
-								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}&orderBy="uid"&equalTo="${AuthFactory.getUser().uid}"`,
+								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}&orderBy="uid"&equalTo="${currentAuthUserId}"`,
 								"method": "GET"
 							})
+						}).then(response => {
+							return response.data
 						})
 				}
 			},
