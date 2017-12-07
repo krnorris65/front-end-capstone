@@ -35,7 +35,11 @@ angular.module("LifeReelApp")
 								"method": "GET"
 							})
 						}).then(response => {
-							return response.data
+							const data = response.data
+							const user = Object.keys(data).map(key => {
+								return data[key]
+							})[0]
+							return user
 						})
 				}
 			},
