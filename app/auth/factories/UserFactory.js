@@ -16,13 +16,23 @@ angular.module("LifeReelApp")
 						}).then(response => {
 							const data = response.data
 							this.cache = Object.keys(data).map(key => {
-								data[key].uid = key
 								return data[key]
 							})
 		
 							return this.cache
 						}).catch(function(error) {
 							console.log(error)
+						})
+				}
+			},
+			"currentUser": {
+				value: function (currentUid) {
+					return firebase.auth().currentUser.getToken(true)
+						.then(idToken => {
+							return $http({
+								"url": `https://firebaseURL/users.json?orderBy="uid"&equalTo="${currentUid}"&auth=${idToken}`,
+								"method": "GET"
+							})
 						})
 				}
 			},

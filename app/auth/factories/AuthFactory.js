@@ -31,7 +31,7 @@ angular.module("LifeReelApp")
 			},
 			getUser: {
 				value: () => {
-					return firebase.auth().currentUser
+					return currentUserData
 				}
 			},
 			logout: {
