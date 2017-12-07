@@ -29,17 +29,18 @@ angular.module("LifeReelApp")
 				value: function () {
 					return firebase.auth().currentUser.getToken(true)
 						.then(idToken => {
-							const currentAuthUserId = AuthFactory.getUser().uid
+							const currentAuthUserId = AuthFactory.getUser().uid //gets the id of the authenicated user
 							return $http({
-								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}&orderBy="uid"&equalTo="${currentAuthUserId}"`,
+								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}&orderBy="uid"&equalTo="${currentAuthUserId}"`, //only gets that user from database
 								"method": "GET"
 							})
 						}).then(response => {
-							const data = response.data
-							const user = Object.keys(data).map(key => {
+							const data = response.data //user information as an object of objects
+							debugger
+							const user = Object.keys(data).map(key => { //turns object into an array from the firebase keys 
 								return data[key]
-							})[0]
-							return user
+							})[0] //and returns the first index since there will only ever be one
+							return user //single object of user info
 						})
 				}
 			},
