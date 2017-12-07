@@ -1,0 +1,20 @@
+<section>
+    <div>
+      Title: <input type="text" ng-model="newEvent.title" />
+    </div>
+    
+    <div>
+      Date: <input type="date" ng-model="newEvent.date" />
+    </div>
+    
+    <div>
+      Description: <textarea ng-model="newEvent.description" />
+    </div>
+    
+    <div>
+      Private: <input type="checkbox" value="true" ng-model="newEvent.private" />
+    </div>
+
+    <button ng-click="addEvent()">Add</button>
+</section>
+<!-- rating -->
