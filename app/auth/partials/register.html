@@ -1,9 +1,9 @@
 <div>
     <h3>Please register your new account below</h3>
-    <input type="text" placeholder="First Name" ng-model="user.first"  autofocus>
-    <input type="text" placeholder="Last Name" ng-model="user.last"  autofocus>
-    <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus>
-    <input type="password" placeholder="Password" ng-model="auth.password">
+    <input type="text" placeholder="First Name" ng-model="user.first"  autofocus required>
+    <input type="text" placeholder="Last Name" ng-model="user.last"  autofocus required>
+    <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus required>
+    <input type="password" placeholder="Password" ng-model="auth.password" required>
     <button ng-click="registerUser(auth, user)">Register</button>
     <a href="#!/auth">Back</a>    
 </div>

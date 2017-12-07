@@ -5,7 +5,7 @@ angular.module("LifeReelApp")
 		firebase.auth().onAuthStateChanged(function (user) {
 			if (user) {
 				currentUserData = user
-	
+				console.log("User is authenticated")
 				if ($location.url() !== "/landing") {
 					$timeout(function () {
 						$location.url("/landing")

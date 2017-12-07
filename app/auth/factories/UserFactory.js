@@ -1,6 +1,31 @@
 angular.module("LifeReelApp")
 	.factory("UserFactory", function($http) {
 		return Object.create(null, {
+			"cache": {
+				value: null,
+				writable: true
+			},
+			"list": {
+				value: function () {
+					return firebase.auth().currentUser.getToken(true)
+						.then(idToken => {
+							return $http({
+								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}`,
+								"method": "GET"
+							})
+						}).then(response => {
+							const data = response.data
+							this.cache = Object.keys(data).map(key => {
+								data[key].uid = key
+								return data[key]
+							})
+		
+							return this.cache
+						}).catch(function(error) {
+							console.log(error)
+						})
+				}
+			},
 			"add": {
 				value: function (user) {
 					return firebase.auth().currentUser.getToken(true)
@@ -15,13 +40,13 @@ angular.module("LifeReelApp")
 						})
 				}
 			},
-			"userList": {
-				value: function () {
+			"delete": {
+				value: function (key) {
 					return firebase.auth().currentUser.getToken(true)
 						.then(idToken => {
 							return $http({
-								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}`,
-								"method": "GET"
+								"url": `https://life-reel.firebaseio.com/users/${key}/.json?auth=${idToken}`,
+								"method": "DELETE"
 							})
 						}).catch(function(error) {
 							console.log(error)
