@@ -36,11 +36,12 @@ angular.module("LifeReelApp")
 							})
 						}).then(response => {
 							const data = response.data //user information as an object of objects
-							debugger
 							const user = Object.keys(data).map(key => { //turns object into an array from the firebase keys 
 								return data[key]
 							})[0] //and returns the first index since there will only ever be one
+							console.log("testing")
 							return user //single object of user info
+						
 						})
 				}
 			},

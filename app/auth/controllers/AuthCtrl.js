@@ -11,7 +11,6 @@ angular.module("LifeReelApp")
 		//when a user logs in, firebase checks to see if they already exist and if so brings them to the landing page
 		$scope.loginUser = function (credentials) {
 			AuthFactory.authenticate(credentials).then(function (didLogin) {
-				$location.url("/landing")
 			})
 		}
 

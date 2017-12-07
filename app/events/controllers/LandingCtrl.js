@@ -1,16 +1,18 @@
 angular.module("LifeReelApp")
-	.controller("LandingCtrl", function($scope, UserFactory){
+	.controller("LandingCtrl", function($scope, UserFactory, $timeout){
 
         // welcome message
-		$scope.heading = "You are now logged in!"
+        // $scope.heading = ""
         
-        // gets users from database, if the uid on the user object matches the current auth user, then return the user
-   
-        
-        UserFactory.currentUser().then(user => {
+        $timeout( ()=> {
+            // gets the current user from the database
+            UserFactory.currentUser().then(user => {
+               
+                const firstName = user.first
+                $timeout()
+                $scope.heading = `Welcome ${firstName}!`
+            })
+        }, 100)
             
-            console.log(user)
-        })
 
-        
 	})
