@@ -6,15 +6,24 @@
     <div>
       Date: <input type="date" ng-model="newEvent.date" />
     </div>
+
+    <div>Rating:
+      <select>
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+      </select>
+    </div>
     
     <div>
-      Description: <textarea ng-model="newEvent.description" />
+      Description: <textarea ng-model="newEvent.description"></textarea>
     </div>
     
     <div>
       Private: <input type="checkbox" value="true" ng-model="newEvent.private" />
     </div>
 
-    <button ng-click="addEvent()">Add</button>
+    <button ng-click="addEvent(newEvent)">Add</button>
 </section>
-<!-- rating -->
