@@ -5,27 +5,6 @@ angular.module("LifeReelApp")
 				value: null,
 				writable: true
 			},
-			"list": {
-				value: function () {
-					return firebase.auth().currentUser.getToken(true)
-						.then(idToken => {
-							return $http({
-								"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}`,
-								"method": "GET"
-							})
-						}).then(response => {
-							const data = response.data
-							this.cache = Object.keys(data).map(key => {
-								data[key].userId = key //stores firebase key as the userId
-								return data[key]
-							})
-		
-							return this.cache
-						}).catch(function(error) {
-							console.log(error)
-						})
-				}
-			},
 			"currentUser": {
 				value: function () {
 					return firebase.auth().currentUser.getToken(true)
@@ -37,12 +16,14 @@ angular.module("LifeReelApp")
 							})
 						}).then(response => {
 							const data = response.data //user information as an object of objects
-							const user = Object.keys(data).map(key => { //turns object into an array from the firebase keys 
+							this.cache = Object.keys(data).map(key => { //turns object into an array from the firebase keys and adds it to the cache so you don't have to make a $http call everytime data is needed
 								data[key].userId = key //stores firebase key as the userId
 								return data[key]
 							})[0] //and returns the first index since there will only ever be one
-							return user //single object of user info
+							return this.cache //single object of user info
 						
+						}).catch(function(error) {
+							console.log(error)
 						})
 				}
 			},
@@ -73,6 +54,28 @@ angular.module("LifeReelApp")
 						})
 				}
 			}
+			// may need later if get to adding friends, don't want to delete just yet
+			// ,"list": {
+			// 		value: function () {
+			// 			return firebase.auth().currentUser.getToken(true)
+			// 				.then(idToken => {
+			// 					return $http({
+			// 						"url": `https://life-reel.firebaseio.com/users.json?auth=${idToken}`,
+			// 						"method": "GET"
+			// 					})
+			// 				}).then(response => {
+			// 					const data = response.data
+			// 					this.cache = Object.keys(data).map(key => {
+			// 						data[key].userId = key //stores firebase key as the userId
+			// 						return data[key]
+			// 					})
+			
+			// 					return this.cache
+			// 				}).catch(function(error) {
+			// 					console.log(error)
+			// 				})
+			// 		}
+			// 	}
 		})
 	})
 

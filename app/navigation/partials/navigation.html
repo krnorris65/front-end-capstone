@@ -1,6 +1,7 @@
 <ul ng-controller="NavCtrl">
         <li ng-if="isAuthenticated()">Welcome To Life Reel</li>
-        <li ng-if="isAuthenticated()"><a href="#">View Your Reel</a></li>
+        <li ng-if="isAuthenticated()"><a href="#!/landing">Home</a></li>
+        <li ng-if="isAuthenticated()"><a href="#!/reel">View Your Reel</a></li>
     
         <li class="align-right">
             <span ng-if="isAuthenticated()">
