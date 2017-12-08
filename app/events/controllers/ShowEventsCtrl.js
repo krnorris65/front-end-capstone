@@ -10,12 +10,7 @@ angular.module("LifeReelApp")
                 $scope.eventArray = events
             
             }, 100)
-            $scope.eventArray.forEach( event =>{
-                const newDate = event.date
-                const dateString = new Date(newDate).toDateString()
-                console.log(dateString)
-                debugger
-            })
+         
         })
 
 
