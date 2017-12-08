@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-	.controller("LandingCtrl", function($scope, UserFactory, $timeout){
+	.controller("LandingCtrl", function($scope, UserFactory, $timeout, $location){
 
         
         $timeout( ()=> {
@@ -12,6 +12,10 @@ angular.module("LifeReelApp")
                 $scope.heading = `Welcome ${firstName}!`
             })
         }, 150)
+
+        $scope.eventForm = () => {
+            $location.url("/add")
+        }
             
 
 	})

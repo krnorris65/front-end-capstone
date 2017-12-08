@@ -12,11 +12,10 @@ angular.module("LifeReelApp")
         }
         
         $scope.addEvent = (event) => {
-            event.date= Date.parse($scope.date)
-            event.rating = parseInt($scope.rating)
-            event.userUID = AuthFactory.getUser().uid 
+            event.date= Date.parse($scope.date) //parses the date into numeric value
+            event.rating = parseInt($scope.rating) //parses the value string to a number
+            event.userUID = AuthFactory.getUser().uid //user uid links event to the user
             
-            debugger
             console.log(event)
         }
 
