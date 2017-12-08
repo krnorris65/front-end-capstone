@@ -11,7 +11,7 @@ angular.module("LifeReelApp")
                 $timeout()
                 $scope.heading = `Welcome ${firstName}!`
             })
-        }, 100)
+        }, 150)
             
 
 	})

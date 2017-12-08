@@ -1,22 +1,29 @@
 <section>
+ <h1>{{heading}}</h1>
     <div>
-      Title: <input type="text" ng-model="newEvent.title" />
+      Title: <input type="text" ng-model="newEvent.title"/>
     </div>
     
     <div>
-      Date: <input type="date" ng-model="newEvent.date" />
+      Date: <input type="date" ng-model="date"/>
     </div>
 
-    <div>Rating:
-      <select>
-        <option value="5">5</option>
-        <option value="4">4</option>
-        <option value="3">3</option>
-        <option value="2">2</option>
-        <option value="1">1</option>
-      </select>
-    </div>
     
+    <span class="rating">
+      Rating:
+      <input id="rating1" type="radio" name="rating" value="1" ng-model="rating">
+      <label for="rating1">1</label>
+      <input id="rating2" type="radio" name="rating" value="2" ng-model="rating">
+      <label for="rating2">2</label>
+      <input id="rating3" type="radio" name="rating" value="3" ng-model="rating">
+      <label for="rating3">3</label>
+      <input id="rating4" type="radio" name="rating" value="4" ng-model="rating">
+      <label for="rating4">4</label>
+      <input id="rating5" type="radio" name="rating" value="5" ng-model="rating">
+      <label for="rating5">5</label>
+    </span>
+        
+
     <div>
       Description: <textarea ng-model="newEvent.description"></textarea>
     </div>

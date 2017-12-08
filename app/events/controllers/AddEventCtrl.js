@@ -1,9 +1,22 @@
-angular.model("LifeReelApp")
-    .controller("AddEventCtrl", function($scope){
+angular.module("LifeReelApp")
+    .controller("AddEventCtrl", function($scope, AuthFactory){
 
-        $scope.newEvent = {}
+        $scope.heading = "Add new segment"
 
+        $scope.newEvent = {
+            "title": "",
+            "date": "",
+            "rating": 0,
+            "description": "",
+            "private": false,
+        }
+        
         $scope.addEvent = (event) => {
+            event.date= Date.parse($scope.date)
+            event.rating = parseInt($scope.rating)
+            event.userUID = AuthFactory.getUser().uid 
+            
+            debugger
             console.log(event)
         }
 
