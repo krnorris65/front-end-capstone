@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-    .controller("ShowEventsCtrl", function($scope, EventFactory, UserFactory, $timeout){
+    .controller("ShowEventsCtrl", function($scope, EventFactory, UserFactory, $timeout, $location){
         
         const currentUser = UserFactory.cache
         $scope.heading = `${currentUser.first}'s Reel`
@@ -9,12 +9,12 @@ angular.module("LifeReelApp")
         EventFactory.userEvents().then( events => {
             $timeout(()=> { 
                 allEvents = events
-                console.log(events)
                 $scope.eventArray = allEvents //$scope.eventArray is what the html iterates over
                 
             }, 100)
             
         })
+
         
         //only shows segments with a rating of 3 or more
         $scope.highlights = () => {
@@ -33,13 +33,17 @@ angular.module("LifeReelApp")
                 }
             })
         }
-
+        
+        //shows all the segments if the user previously filtered them
         $scope.showAll = () => {
             $scope.eventArray = allEvents
         }
 
-        $scope.deleteEvent = () => {
-            console.log()
+        $scope.deleteEvent = (e) => {
+            const buttonId = e.target.id
+            const eventKey = buttonId.split("!")[1]
+
+            EventFactory.delete(eventKey)
         }
        
 

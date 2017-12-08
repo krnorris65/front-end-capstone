@@ -14,7 +14,7 @@
     <a href ng-click="deleteThis = !deleteThis">Delete</a> <a href="#">Edit</a>
     <div ng-show="deleteThis">
         Are you sure you want to delete this segment?
-        <button ng-click="deleteEvent()">Yes</button>
+        <button id="delete!{{segment.eventId}}"ng-click="deleteEvent($event); deleteThis = !deleteThis">Yes</button>
         <button ng-click="deleteThis = !deleteThis">No</button>
     </div>
     </div>
