@@ -1,8 +1,9 @@
 angular.module("LifeReelApp")
-    .controller("AddEventCtrl", function($scope, AuthFactory){
+    .controller("AddEventCtrl", function($scope, AuthFactory, EventFactory){
 
-        $scope.heading = "Add new segment"
+        $scope.heading = "Add new segment" //adds title to page
 
+        //default settings of a new event
         $scope.newEvent = {
             "title": "",
             "date": "",
@@ -16,7 +17,22 @@ angular.module("LifeReelApp")
             event.rating = parseInt($scope.rating) //parses the value string to a number
             event.userUID = AuthFactory.getUser().uid //user uid links event to the user
             
-            console.log(event)
+            EventFactory.add(event) //adds event to firebase
+            
+            //resets newEvent object
+            $scope.newEvent = { 
+                "title": "",
+                "date": "",
+                "rating": 0,
+                "description": "",
+                "private": false,
+            }
+            
+            //resets date and rating fields in the form
+            $scope.date = "" 
+            $scope.rating = ""
+
+            alert("A new segment has been add to your reel")
         }
 
 })
