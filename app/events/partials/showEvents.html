@@ -1,11 +1,15 @@
 <section>
     <h1>{{heading}}</h1>
 
-    <div ng-repeat="segment in eventArray" class="segment">
-        <h3>{{segment.title}}</h3>
-        <p>{{segment.date | date:"longDate"}}</p>
-        <p>{{segment.rating}}</p>
-        <p>{{segment.description}}</p>
+<button ng-click="highlights()">Show Highlights</button>
+<button ng-click="lowlights()">Show Lowlights</button>
+<button ng-click="showAll()">Show All</button>
+
+    <div ng-repeat="segment in eventArray | orderBy: 'rating':true" class="segment" >
+        <h3 class+"title">{{segment.title}}</h3>
+        <p "date">{{segment.date | date:"longDate"}}</p>
+        <p "rating">{{segment.rating}}</p>
+        <p "description">{{segment.description}}</p>
 
     </div>
 

@@ -3,15 +3,37 @@ angular.module("LifeReelApp")
         
         const currentUser = UserFactory.cache
         $scope.heading = `${currentUser.first}'s Reel`
-        $scope.eventArray = []
-
+        let allEvents = []
+        
         EventFactory.userEvents().then( events => {
             $timeout(()=> { 
-                $scope.eventArray = events
-            
+                allEvents = events
+                $scope.eventArray = allEvents
+                
             }, 100)
-         
+            
         })
+        
+        
+        $scope.highlights = () => {
+            $scope.eventArray = allEvents.filter( event => {
+                if(event.rating >= 3) {
+                    return event
+                }
+            })
+        }
+        
+        $scope.lowlights = () => {
+            $scope.eventArray = allEvents.filter( event => {
+                if(event.rating <= 2) {
+                    return event
+                }
+            })
+        }
 
+        $scope.showAll = () => {
+            $scope.eventArray = allEvents
+        }
+       
 
     })
