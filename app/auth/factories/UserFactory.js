@@ -16,6 +16,7 @@ angular.module("LifeReelApp")
 						}).then(response => {
 							const data = response.data
 							this.cache = Object.keys(data).map(key => {
+								data[key].userId = key //stores firebase key as the userId
 								return data[key]
 							})
 		
@@ -37,6 +38,7 @@ angular.module("LifeReelApp")
 						}).then(response => {
 							const data = response.data //user information as an object of objects
 							const user = Object.keys(data).map(key => { //turns object into an array from the firebase keys 
+								data[key].userId = key //stores firebase key as the userId
 								return data[key]
 							})[0] //and returns the first index since there will only ever be one
 							return user //single object of user info
