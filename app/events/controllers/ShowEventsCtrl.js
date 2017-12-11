@@ -50,6 +50,6 @@ angular.module("LifeReelApp")
             })
 
         }
-       
+
 
     })
