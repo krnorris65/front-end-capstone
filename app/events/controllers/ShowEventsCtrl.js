@@ -49,13 +49,18 @@ angular.module("LifeReelApp")
             const dateMin = Date.parse($scope.min)
             const dateMax = Date.parse($scope.max)
 
-            allEvents = allEvents.filter( event => {
-                if(event.date >= dateMin && event.date <= dateMax) {
-                    return event
-                }
-            })
-            
-            $scope.eventArray = allEvents
+            if(dateMax < dateMin){
+                alert("End Date needs to be after the Start Date")
+            } else {
+                allEvents = allEvents.filter( event => {
+                    if(event.date >= dateMin && event.date <= dateMax) {
+                        return event
+                    }
+                })
+                
+                $scope.eventArray = allEvents
+            }
+
         }
 
         $scope.clearDates = () => {

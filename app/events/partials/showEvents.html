@@ -7,9 +7,11 @@
 
 <h4>Customize Reel</h4>
 <div>
-    <input type="date" ng-model="min">
+    <label for="startDate">Start Date:</label>
+    <input id="startDate" type="date" ng-model="min">
     to
-    <input type="date" ng-model="max">
+    <label for="endDate">End Date:</label>
+    <input id="endDate" type="date" ng-model="max">
     <button ng-click="setDates()">Set Dates</button>
     <button ng-click="clearDates()">Clear</button>
 
