@@ -11,7 +11,7 @@ angular.module("LifeReelApp")
                 $timeout()
                 $scope.heading = `Welcome ${firstName}!`
             })
-        }, 150)
+        }, 500)
 
         $scope.eventForm = () => {
             $location.url("/add")
