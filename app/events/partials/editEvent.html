@@ -1,10 +1,11 @@
 <div>
     <h1>Edit This Segement</h1>
         <div>
-            Title: <input type="text" value="{{event.title}}" />
+            Title: <input type="text" value="{{event.title}}" ng-model="editEvent.title"/>
         </div>
         <div>
-            Date: <input type="date" value="{{event.date | date:'yyyy'}}-{{event.date | date:'MM'}}-{{event.date | date:'dd'}}"/>
+            Date: <input type="date" value="{{editEvent.date | date:'yyyy'}}-{{editEvent.date | date:'MM'}}-{{editEvent.date | date:'dd'}}" ng-model="date"/>
+            
         </div>
 
         <span class="rating">
@@ -22,9 +23,11 @@
         </span>
 
         <div>
-            Description: <textarea>{{event.description}}</textarea>
+            Description: <textarea ng-model="editEvent.description">{{event.description}}</textarea>
         </div>
         <div>
-            Private: <input type="checkbox" value="true" ng-checked="event.private">
+            Private: <input type="checkbox" value="true" ng-checked="editEvent.private" ng-model="editEvent.private">
         </div>
+        <button ng-click="saveEvent(editEvent)">Save</button>
+        <button ng-click="cancelEdit()">Cancel</button>
 </div>
