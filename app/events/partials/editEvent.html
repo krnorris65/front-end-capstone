@@ -1,15 +1,30 @@
 <div>
-    <h1>Testing This</h1>
-        <!-- <div>
-            Title: <input type="text" value="{{segment.title}}" />
+    <h1>Edit This Segement</h1>
+        <div>
+            Title: <input type="text" value="{{event.title}}" />
         </div>
         <div>
-            Date: <input type="date" value="{{segment.date | date:'yyyy'}}-{{segment.date | date:'MM'}}-{{segment.date | date:'dd'}}"/>
+            Date: <input type="date" value="{{event.date | date:'yyyy'}}-{{event.date | date:'MM'}}-{{event.date | date:'dd'}}"/>
         </div>
+
+        <span class="rating">
+            Rating:
+            <input id="rating1" type="radio" name="rating" value="1" ng-model="rating">
+            <label for="rating1">1</label>
+            <input id="rating2" type="radio" name="rating" value="2" ng-model="rating">
+            <label for="rating2">2</label>
+            <input id="rating3" type="radio" name="rating" value="3" ng-model="rating">
+            <label for="rating3">3</label>
+            <input id="rating4" type="radio" name="rating" value="4" ng-model="rating">
+            <label for="rating4">4</label>
+            <input id="rating5" type="radio" name="rating" value="5" ng-model="rating">
+            <label for="rating5">5</label>
+        </span>
+
         <div>
-            Description: <textarea>{{segment.description}}</textarea>
+            Description: <textarea>{{event.description}}</textarea>
         </div>
         <div>
             Private: <input type="checkbox" value="true">
-        </div> -->
+        </div>
 </div>

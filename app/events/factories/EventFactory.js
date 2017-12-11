@@ -59,6 +59,8 @@ angular.module("LifeReelApp")
                     return $http({
                         "url": `https://life-reel.firebaseio.com/events/${key}/.json?auth=${idToken}`,
                         "method": "GET"
+                    }).then(response => {
+                        return response.data
                     })
                 }).catch(function(error) {
                     console.log(error)

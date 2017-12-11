@@ -1,9 +1,15 @@
 angular.module("LifeReelApp")
-    .controller("EditEventCtrl", function($scope, $routeParams, EventFactory){
+    .controller("EditEventCtrl", function($scope, $routeParams, EventFactory, $timeout){
+
+        $scope.event = {}
 
         EventFactory.single($routeParams.eventId).then (event => {
-            console.log(event)
+            $timeout( () => {
+                $scope.event= event
+
+            }, 100)
         })
+
 
 
     })
