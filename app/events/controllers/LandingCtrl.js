@@ -10,6 +10,7 @@ angular.module("LifeReelApp")
                 const firstName = user.first
                 $timeout()
                 $scope.heading = `Welcome ${firstName}!`
+                $scope.addButton = "Add New Segment"
             })
         }, 500)
 
