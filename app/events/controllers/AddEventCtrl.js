@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-    .controller("AddEventCtrl", function($scope, AuthFactory, EventFactory){
+    .controller("AddEventCtrl", function($scope, AuthFactory, EventFactory, $location){
 
         $scope.heading = "Add new segment" //adds title to page
 
@@ -33,6 +33,10 @@ angular.module("LifeReelApp")
             $scope.rating = ""
 
             alert("A new segment has been add to your reel")
+            
+            //brings user back to landing page
+            $location.url("/landing")
+
         }
 
 })

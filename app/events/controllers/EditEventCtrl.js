@@ -18,7 +18,18 @@ angular.module("LifeReelApp")
             $location.url("/reel")
         }
 
+        //deletes event
+        $scope.deleteEvent = () => {
+ 
+            EventFactory.delete($routeParams.eventId).then(reload => {
+                $timeout(()=> { 
+                    $scope.backToReel()
+                }, 100)
+            })
+
+        }
         
+        //saves updated event information
         $scope.saveEvent = (event) => {
             //if no changes were made to the date, then don't reset the value of the date key. if changes were made, then parse the date and reset the value of the date key
             if($scope.date !== undefined) {

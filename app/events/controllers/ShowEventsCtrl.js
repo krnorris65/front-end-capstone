@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-    .controller("ShowEventsCtrl", function($scope, EventFactory, UserFactory, $timeout, $location, $route){
+    .controller("ShowEventsCtrl", function($scope, EventFactory, UserFactory, $timeout, $location){
         
         const currentUser = UserFactory.cache
         $scope.heading = `${currentUser.first}'s Reel`
@@ -39,17 +39,7 @@ angular.module("LifeReelApp")
             $scope.eventArray = allEvents
         }
 
-        $scope.deleteEvent = (e) => {
-            const buttonId = e.target.id
-            const eventKey = buttonId.split("!")[1]
 
-            EventFactory.delete(eventKey).then(reload => {
-                $timeout(()=> { 
-                    $route.reload()
-                }, 100)
-            })
-
-        }
 
 
     })

@@ -1,33 +1,46 @@
+
+<button ng-click="backToReel()">Back to Your Reel</button>
 <div>
-    <h1>Edit This Segement</h1>
-        <div>
-            Title: <input type="text" value="{{event.title}}" ng-model="editEvent.title"/>
-        </div>
-        <div>
-            Date: <input type="date" value="{{editEvent.date | date:'yyyy'}}-{{editEvent.date | date:'MM'}}-{{editEvent.date | date:'dd'}}" ng-model="date"/>
-            
-        </div>
+    <h3>Edit This Segement</h3>
 
-        <span class="rating">
-            Rating:
-            <input id="rating1" type="radio" name="rating" ng-value="1" ng-model="selectedRating">
-            <label for="rating1">1</label>
-            <input id="rating2" type="radio" name="rating" ng-value="2" ng-model="selectedRating">
-            <label for="rating2">2</label>
-            <input id="rating3" type="radio" name="rating" ng-value="3" ng-model="selectedRating">
-            <label for="rating3">3</label>
-            <input id="rating4" type="radio" name="rating" ng-value="4" ng-model="selectedRating">
-            <label for="rating4">4</label>
-            <input id="rating5" type="radio" name="rating" ng-value="5" ng-model="selectedRating">
-            <label for="rating5">5</label>
-        </span>
+    <div>
+        Title: <input type="text" value="{{event.title}}" ng-model="editEvent.title"/>
+    </div>
+    <div>
+        Date: <input type="date" value="{{editEvent.date | date:'yyyy'}}-{{editEvent.date | date:'MM'}}-{{editEvent.date | date:'dd'}}" ng-model="date"/>
+        
+    </div>
 
-        <div>
-            Description: <textarea ng-model="editEvent.description">{{event.description}}</textarea>
-        </div>
-        <div>
-            Private: <input type="checkbox" value="true" ng-checked="editEvent.private" ng-model="editEvent.private">
-        </div>
-        <button ng-click="saveEvent(editEvent)">Save</button>
-        <button ng-click="backToReel()">Cancel</button>
+    <span class="rating">
+        Rating:
+        <input id="rating1" type="radio" name="rating" ng-value="1" ng-model="selectedRating">
+        <label for="rating1">1</label>
+        <input id="rating2" type="radio" name="rating" ng-value="2" ng-model="selectedRating">
+        <label for="rating2">2</label>
+        <input id="rating3" type="radio" name="rating" ng-value="3" ng-model="selectedRating">
+        <label for="rating3">3</label>
+        <input id="rating4" type="radio" name="rating" ng-value="4" ng-model="selectedRating">
+        <label for="rating4">4</label>
+        <input id="rating5" type="radio" name="rating" ng-value="5" ng-model="selectedRating">
+        <label for="rating5">5</label>
+    </span>
+
+    <div>
+        Description: <textarea ng-model="editEvent.description">{{event.description}}</textarea>
+    </div>
+    <div>
+        Private: <input type="checkbox" value="true" ng-checked="editEvent.private" ng-model="editEvent.private">
+    </div>
+    <button ng-click="saveEvent(editEvent)">Save</button>
 </div>
+<div>
+    <h3>Delete This Segement</h3>
+    <!-- deletes the segment -->
+    <button ng-click="deleteThis = !deleteThis">Delete</button>
+    <div ng-show="deleteThis">
+        Are you sure you want to delete this segment?
+        <button ng-click="deleteEvent()">Yes</button>
+        <button ng-click="backToReel()">No</button>
+    </div>
+</div>
+        
