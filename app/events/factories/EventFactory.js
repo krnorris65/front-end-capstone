@@ -25,6 +25,21 @@ angular.module("LifeReelApp")
                     })
             }
         },
+        "single": {
+            value: function(key) {
+                return firebase.auth().currentUser.getToken(true)
+                .then(idToken => {
+                    return $http({
+                        "url": `https://life-reel.firebaseio.com/events/${key}/.json?auth=${idToken}`,
+                        "method": "GET"
+                    }).then(response => {
+                        return response.data
+                    })
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            }
+        },
         "add": {
             value: function (event) {
                 return firebase.auth().currentUser.getToken(true)
@@ -52,19 +67,18 @@ angular.module("LifeReelApp")
                     })
             }
         },
-        "single": {
-            value: function(key) {
+        "edit": {
+            value: function (key, event) {
                 return firebase.auth().currentUser.getToken(true)
-                .then(idToken => {
-                    return $http({
-                        "url": `https://life-reel.firebaseio.com/events/${key}/.json?auth=${idToken}`,
-                        "method": "GET"
-                    }).then(response => {
-                        return response.data
+                    .then(idToken => {
+                        return $http({
+                            "url": `https://life-reel.firebaseio.com/events/${key}.json?auth=${idToken}`,
+                            "method": "PUT",
+                            "data": JSON.stringify(event)
+                        })
+                    }).catch(function(error) {
+                        console.log(error)
                     })
-                }).catch(function(error) {
-                    console.log(error)
-                })
             }
         }
         // may be needed later when friends come into play
