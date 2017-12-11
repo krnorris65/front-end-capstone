@@ -19,21 +19,8 @@
             <button ng-click="deleteThis = !deleteThis">No</button>
         </div>
 
-        <a href ng-click="editThis = !editThis">Edit</a>
-        <div ng-show="editThis">
-            <div>
-                Title: <input type="text" value="{{segment.title}}" />
-            </div>
-            <div>
-                Date: <input type="date" value="{{segment.date | date:'yyyy'}}-{{segment.date | date:'MM'}}-{{segment.date | date:'dd'}}"/>
-            </div>
-            <div>
-                Description: <textarea>{{segment.description}}</textarea>
-            </div>
-            <div>
-                Private: <input type="checkbox" value="true">
-            </div>
-        </div>
+        <a href="#!/edit/{{segment.eventId}}">Edit</a>
+
 
     </div>
 

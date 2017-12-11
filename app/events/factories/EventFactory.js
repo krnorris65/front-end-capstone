@@ -51,6 +51,19 @@ angular.module("LifeReelApp")
                         console.log(error)
                     })
             }
+        },
+        "single": {
+            value: function(key) {
+                return firebase.auth().currentUser.getToken(true)
+                .then(idToken => {
+                    return $http({
+                        "url": `https://life-reel.firebaseio.com/events/${key}/.json?auth=${idToken}`,
+                        "method": "GET"
+                    })
+                }).catch(function(error) {
+                    console.log(error)
+                })
+            }
         }
         // may be needed later when friends come into play
         // ,"allEvents": {

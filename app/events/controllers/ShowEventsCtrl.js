@@ -10,7 +10,7 @@ angular.module("LifeReelApp")
             $timeout(()=> { 
                 allEvents = events
                 $scope.eventArray = allEvents //$scope.eventArray is what the html iterates over
-                
+                console.log(allEvents)
             }, 100)
             
         })
