@@ -1,16 +1,17 @@
 angular.module("LifeReelApp")
     .controller("ShowEventsCtrl", function($scope, EventFactory, UserFactory, $timeout, $location){
         
-        const currentUser = UserFactory.cache
         let allEvents = [] //array that holds all of the events to allow for filtering when buttons are pressed
         
+        //loading page and all events for user
         $timeout( ()=> {
-            $scope.heading = `${currentUser.first}'s Reel`
+            const currentUser = UserFactory.cache
+            $scope.heading = `${currentUser.first}'s Life Reel`
 
             EventFactory.userEvents().then( events => {
                 $timeout(()=> { 
                     allEvents = events
-                    $scope.eventArray = allEvents //$scope.eventArray is what the html iterates over
+                    $scope.eventArray = allEvents
                     console.log(allEvents)
                 }, 100)
                 
@@ -43,6 +44,27 @@ angular.module("LifeReelApp")
             $scope.eventArray = allEvents
         }
 
+        //allows user to set the date range of the events shown.
+        $scope.setDates = () => {
+            const dateMin = Date.parse($scope.min)
+            const dateMax = Date.parse($scope.max)
+
+            allEvents = allEvents.filter( event => {
+                if(event.date >= dateMin && event.date <= dateMax) {
+                    return event
+                }
+            })
+            
+            $scope.eventArray = allEvents
+        }
+
+        $scope.clearDates = () => {
+            $scope.min = ""
+            $scope.max = ""
+
+            allEvents = EventFactory.cache
+            $scope.eventArray = allEvents
+        }
 
 
 
