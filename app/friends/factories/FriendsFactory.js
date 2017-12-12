@@ -1,10 +1,14 @@
 angular.module("LifeReelApp")
 .factory("FriendsFactory", function($http, AuthFactory, UserFactory) {
     return Object.create(null, {
-        "cache": {
+        "sentCache": {
             value: null,
             writable: true
-        }, 
+        },
+        "receivedCache": {
+            value: null,
+            writable: true
+        },  
         "sentRequests": {
             value: function () {
                 return firebase.auth().currentUser.getToken(true)
@@ -16,11 +20,11 @@ angular.module("LifeReelApp")
                         })
                     }).then(response => {
                         const data = response.data //friend information as an object of objects
-                        const requests = Object.keys(data).map(key => { //turns object into an array from the firebase keys and adds it to the cache so you don't have to make a $http call everytime data is needed
+                        this.sentCache = Object.keys(data).map(key => { //turns object into an array from the firebase keys and adds it to the cache so you don't have to make a $http call everytime data is needed
                             data[key].friendId = key //stores firebase key as the friendId
                             return data[key]
                         })
-                        return requests //array of all sent requests
+                        return this.sentCache //array of all sent requests
                     
                     }).catch(function(error) {
                         console.log(error)
@@ -38,11 +42,11 @@ angular.module("LifeReelApp")
                         })
                     }).then(response => {
                         const data = response.data //friend information as an object of objects
-                        const requests = Object.keys(data).map(key => { //turns object into an array from the firebase keys and adds it to the cache so you don't have to make a $http call everytime data is needed
+                        this.receivedCache = Object.keys(data).map(key => { //turns object into an array from the firebase keys and adds it to the cache so you don't have to make a $http call everytime data is needed
                             data[key].friendId = key //stores firebase key as the friendId
                             return data[key]
                         })
-                        return requests //array of all sent requests
+                        return this.receivedCache //array of all sent requests
                     
                     }).catch(function(error) {
                         console.log(error)
