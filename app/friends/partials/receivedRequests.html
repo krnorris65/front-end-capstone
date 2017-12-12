@@ -1,0 +1,8 @@
+<section ng-controller="ReceivedCtrl">
+        <h1>{{heading}}</h1>
+    
+        <div ng-repeat="friend in receivedRequests">
+            <p>{{friend.senderName}} <i>Received on {{friend.date | date:"shortDate"}}</i></p>
+            <button ng-click="confirmRequest(friend)">Confirm Request</button>
+        </div>
+    </section>

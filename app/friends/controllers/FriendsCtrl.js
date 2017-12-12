@@ -25,6 +25,7 @@ angular.module("LifeReelApp")
     $scope.addFriend = (user) => {
         const newFriend = {
             "senderUID": UserFactory.cache.uid, //sets current user as the sender
+            "senderName": UserFactory.cache.fullName,
             "receiverUID": user.uid, //sets user being sent the request as receiver
             "receiverName": user.fullName,
             "date": Date.now(), //date the request was send

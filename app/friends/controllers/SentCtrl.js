@@ -1,18 +1,18 @@
 angular.module("LifeReelApp")
-    .controller("PendingCtrl", function($scope, FriendsFactory, UserFactory, $timeout) {
+    .controller("SentCtrl", function($scope, FriendsFactory, UserFactory, $timeout) {
 
         $scope.heading = "Sent Requests"
-        $scope.requests = []
+        $scope.sentRequests = []
 
 
 
         FriendsFactory.sentRequests().then(friends => {
-            let pendingRequests = friends.filter(friend => {
+            let pendingFriends = friends.filter(friend => {
                 return friend.pending === true
             })
 
             $timeout()
-            $scope.requests = pendingRequests
+            $scope.sentRequests = pendingFriends
            
         })
 

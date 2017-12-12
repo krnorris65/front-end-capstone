@@ -27,6 +27,28 @@ angular.module("LifeReelApp")
                     })
             }
         },
+        "receivedRequests": {
+            value: function () {
+                return firebase.auth().currentUser.getToken(true)
+                    .then(idToken => {
+                        const currentAuthUserId = AuthFactory.getUser().uid //gets the id of the authenicated user
+                        return $http({
+                            "url": `https://life-reel.firebaseio.com/friends.json?auth=${idToken}&orderBy="receiverUID"&equalTo="${currentAuthUserId}"`,
+                            "method": "GET"
+                        })
+                    }).then(response => {
+                        const data = response.data //friend information as an object of objects
+                        const requests = Object.keys(data).map(key => { //turns object into an array from the firebase keys and adds it to the cache so you don't have to make a $http call everytime data is needed
+                            data[key].friendId = key //stores firebase key as the friendId
+                            return data[key]
+                        })
+                        return requests //array of all sent requests
+                    
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+            }
+        },
         "find": {
             value: function (searchString) {
                 //gets listCache of all users from the UserFactory and finds the users that match the search result, but doesn't return the current user
@@ -51,6 +73,20 @@ angular.module("LifeReelApp")
                         return $http({
                             "url": `https://life-reel.firebaseio.com/friends.json?auth=${idToken}`,
                             "method": "POST",
+                            "data": JSON.stringify(friend)
+                        })
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+            }
+        },
+        "confirm": {
+            value: function (key, friend) {
+                return firebase.auth().currentUser.getToken(true)
+                    .then(idToken => {
+                        return $http({
+                            "url": `https://life-reel.firebaseio.com/friends/${key}.json?auth=${idToken}`,
+                            "method": "PUT",
                             "data": JSON.stringify(friend)
                         })
                     }).catch(function(error) {
