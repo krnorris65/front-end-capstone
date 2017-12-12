@@ -25,6 +25,16 @@ angular.module("LifeReelApp")
                         console.log(error)
                     })
             }
-        }
+        },
+        "find": {
+            value: function (searchString) {
+                const result = this.cache.filter(user => {
+                    return user.first.toLowerCase().includes(searchString) ||
+                           user.last.toLowerCase().includes(searchString) ||
+                           user.fullName.toLowerCase().includes(searchString)
+                })
+                return result
+            }
+        },
     })
 })
