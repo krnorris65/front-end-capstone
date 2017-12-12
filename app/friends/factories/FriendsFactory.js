@@ -7,13 +7,13 @@ angular.module("LifeReelApp")
         }, 
         "find": {
             value: function (searchString) {
-                //finds all users who match the search result
+                //gets listCache of all users from the UserFactory and finds the users that match the search result, but doesn't return the current user
                 const result = UserFactory.listCache.filter(user => {
                     return user.first.toLowerCase().includes(searchString) ||
                            user.last.toLowerCase().includes(searchString) ||
                            user.fullName.toLowerCase().includes(searchString)
                 })
-                //doesn't return the current user
+                //filters out the current user
                 const notUser = result.filter(user => {
                     if(UserFactory.cache.uid !== user.uid) {
                         return user

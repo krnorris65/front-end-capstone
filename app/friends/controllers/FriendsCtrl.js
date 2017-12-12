@@ -4,7 +4,7 @@ angular.module("LifeReelApp")
     $scope.heading = "Find Friends"
     $scope.userList = []
 
-    //get user info from database
+    //gets user info from database
     UserFactory.allUsers()
 
     $scope.findUser = function (search) {
