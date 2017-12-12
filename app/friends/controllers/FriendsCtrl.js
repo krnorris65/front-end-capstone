@@ -4,8 +4,6 @@ angular.module("LifeReelApp")
     $scope.heading = "Find Friends"
     $scope.userList = []
 
-    //gets user info from database
-    UserFactory.allUsers()
 
     $scope.findUser = function (search) {
         //if user doesn't enter anything in the search bar then nothing is returned

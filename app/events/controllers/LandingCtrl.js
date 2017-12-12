@@ -1,7 +1,8 @@
 angular.module("LifeReelApp")
 	.controller("LandingCtrl", function($scope, UserFactory, $timeout, $location, EventFactory){
+        //loads all users
+        UserFactory.allUsers()
 
-        
         $timeout( ()=> {
             // gets the current user from the database
             UserFactory.currentUser().then(user => {
