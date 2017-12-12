@@ -26,6 +26,7 @@ angular.module("LifeReelApp")
         const newFriend = {
             "senderUID": UserFactory.cache.uid, //sets current user as the sender
             "receiverUID": user.uid, //sets user being sent the request as receiver
+            "receiverName": user.fullName,
             "date": Date.now(), //date the request was send
             "pending": true //default of pending request is true
         }

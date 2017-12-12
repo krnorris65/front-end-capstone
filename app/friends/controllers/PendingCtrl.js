@@ -2,30 +2,18 @@ angular.module("LifeReelApp")
     .controller("PendingCtrl", function($scope, FriendsFactory, UserFactory, $timeout) {
 
         $scope.heading = "Sent Requests"
-        $scope.requests = [{fullName: "Test This"}]
-
-        let friendArray = []
+        $scope.requests = []
 
 
-        FriendsFactory.sentRequests().then(friend => {
-            friendArray = friend
 
-        }).then( results => {
-
-            UserFactory.listCache.filter( user => {
-                friendArray.filter( f => {
-                    if(f.receiverUID === user.uid) {
-                        $scope.apply()
-                        $scope.requests = user
-                    }
-                })
-
-                
+        FriendsFactory.sentRequests().then(friends => {
+            let pendingRequests = friends.filter(friend => {
+                return friend.pending === true
             })
-            
-            console.log($scope.requests)
+
+            $timeout()
+            $scope.requests = pendingRequests
+           
         })
-
-
 
     })
