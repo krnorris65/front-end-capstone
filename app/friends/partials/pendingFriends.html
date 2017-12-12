@@ -1,7 +1,7 @@
 <section ng-controller="PendingCtrl">
     <h1>{{heading}}</h1>
 
-    <div ng-repeat="friend in sentRequests">
-        <p>{{friend}}</p>
+    <div ng-repeat="friend in requests">
+        <p>{{friend.fullName}}</p>
     </div>
 </section>
