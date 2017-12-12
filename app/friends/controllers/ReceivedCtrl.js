@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-.controller("ReceivedCtrl", function($scope, FriendsFactory, UserFactory, $timeout) {
+.controller("ReceivedCtrl", function($scope, FriendsFactory, UserFactory, $timeout, $route) {
 
     $scope.heading = "Received Requests"
     $scope.receivedRequests = []
@@ -27,6 +27,7 @@ angular.module("LifeReelApp")
         }
 
         FriendsFactory.confirm(friend.friendId, confirmedFriend)
+        $route.reload()
     }
 
 })
