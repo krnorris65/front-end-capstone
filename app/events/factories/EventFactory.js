@@ -81,27 +81,5 @@ angular.module("LifeReelApp")
                     })
             }
         }
-        // may be needed later when friends come into play
-        // ,"allEvents": {
-        //     value: function () {
-        //         return firebase.auth().currentUser.getToken(true)
-        //             .then(idToken => {
-        //                 return $http({
-        //                     "url": `https://life-reel.firebaseio.com/events.json?auth=${idToken}`,
-        //                     "method": "GET"
-        //                 })
-        //             }).then(response => {
-        //                 const data = response.data
-        //                 this.cache = Object.keys(data).map(key => {
-        //                     data[key].eventId = key //stores firebase key as the eventId
-        //                     return data[key]
-        //                 })
-    
-        //                 return this.cache
-        //             }).catch(function(error) {
-        //                 console.log(error)
-        //             })
-        //     }
-        // }
     })
 })

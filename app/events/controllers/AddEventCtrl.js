@@ -18,7 +18,6 @@ angular.module("LifeReelApp")
         }
         
         $scope.addEvent = (event) => {
-            debugger
             if($scope.date === undefined || $scope.rating === undefined || event.title === "") {
                 alert("Please add a title, date and rating")
             } else {
