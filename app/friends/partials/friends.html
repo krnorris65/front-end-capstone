@@ -2,12 +2,13 @@
     <h1>{{heading}}</h1>
 
     <div ng-include="'./app/friends/partials/search.html'"></div>
-
+    
     <div ng-repeat="user in userList">
         <p>{{user.fullName}}</p>
         <button ng-click="addFriend(user)">Add as Friend</button>
     </div>
-
+    
+    <div ng-include="'./app/friends/partials/pendingFriends.html'"></div>
 
 
 </section>
