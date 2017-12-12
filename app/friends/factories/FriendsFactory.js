@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-.factory("FriendsFactory", function($http, AuthFactory) {
+.factory("FriendsFactory", function($http, AuthFactory, UserFactory) {
     return Object.create(null, {
         "cache": {
             value: null,
@@ -28,12 +28,19 @@ angular.module("LifeReelApp")
         },
         "find": {
             value: function (searchString) {
+                //finds all users who match the search result
                 const result = this.cache.filter(user => {
                     return user.first.toLowerCase().includes(searchString) ||
                            user.last.toLowerCase().includes(searchString) ||
                            user.fullName.toLowerCase().includes(searchString)
                 })
-                return result
+                //doesn't return the current user
+                const notUser = result.filter(user => {
+                    if(UserFactory.cache.uid !== user.uid) {
+                        return user
+                    }
+                })
+                return notUser
             }
         },
     })

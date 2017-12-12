@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-.controller("FriendsCtrl", function($scope, FriendsFactory, $route, $timeout){ 
+.controller("FriendsCtrl", function($scope, FriendsFactory, UserFactory, $timeout){ 
 
     $scope.userList = []
 
@@ -10,13 +10,18 @@ angular.module("LifeReelApp")
     $scope.heading = "Find Friends"
 
     $scope.findUser = function (search) {
-        const searchedName = search.toLowerCase()
-        const foundUser = FriendsFactory.find(searchedName)
-        $scope.userList = foundUser
+        const searchedName = search.toLowerCase() //converts string to lowercase
+        const foundUsers = FriendsFactory.find(searchedName) //filters through cached users to find users that contain the searched name; doesn't include current user
         
-        if(foundUser.length === 0) {
+
+        $scope.userList = foundUsers
+        
+        if(foundUsers.length === 0) {
             alert("User not found")
-        }
-        
+        } 
+    }
+
+    $scope.addFriend = (user) => {
+        console.log(user)
     }
 })
