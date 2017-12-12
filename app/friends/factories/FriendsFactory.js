@@ -43,5 +43,19 @@ angular.module("LifeReelApp")
                 return notUser
             }
         },
+        "add": {
+            value: function (friend) {
+                return firebase.auth().currentUser.getToken(true)
+                    .then(idToken => {
+                        return $http({
+                            "url": `https://life-reel.firebaseio.com/friends.json?auth=${idToken}`,
+                            "method": "POST",
+                            "data": JSON.stringify(friend)
+                        })
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+            }
+        }
     })
 })
