@@ -6,8 +6,8 @@ angular.module("LifeReelApp")
 
         // //if you sent someone a friend request and they have not confirmed it yet then it appears here
 
-        $scope.sentRequests = FriendsFactory.sentCache.filter(friends => {
-            return friends.pending === true
+        $scope.sentRequests = FriendsFactory.sentCache.filter(friend => {
+            return friend.pending === true
         })
 
     })
