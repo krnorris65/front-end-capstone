@@ -35,6 +35,16 @@ angular.module("LifeReelApp")
         if(search !== "" && search !== undefined) {
             const searchedName = search.toLowerCase() //converts string to lowercase
             const foundUsers = FriendsFactory.find(searchedName) //filters through cached users to find users that contain the searched name; doesn't include current user
+
+            foundUsers.forEach(result => {
+                friendsArray.forEach( friend => {
+                    //if the user in the results matches a friend in the friendsArray, set the pendingStatus as the current status of the friendship
+                    if(result.uid === friend.friendUID) {
+                        result.pendingStatus = friend.pending
+                    }
+                })
+            })
+
             
             console.log("search results",foundUsers)
             console.log("friends", friendsArray)
