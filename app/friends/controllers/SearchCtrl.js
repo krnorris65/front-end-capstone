@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-.controller("SearchCtrl", function($scope, FriendsFactory, UserFactory, $timeout){ 
+.controller("SearchCtrl", function($scope, FriendsFactory, UserFactory, $timeout, $location, $route){ 
     
     $scope.heading = "Find New Friends"
     $scope.userList = []
@@ -11,7 +11,8 @@ angular.module("LifeReelApp")
             FriendsFactory.sentCache.forEach(friend => {
                 const status = {
                     "friendUID": friend.receiverUID,
-                    "pending": friend.pending
+                    "pending": friend.pending,
+                    "dateSent": friend.date
                 }
                 
                 friendsArray.push(status)
@@ -22,7 +23,8 @@ angular.module("LifeReelApp")
             FriendsFactory.receivedCache.forEach(friend => {
                 const status = {
                     "friendUID": friend.senderUID,
-                    "pending": friend.pending
+                    "pending": friend.pending,
+                    "dateSent": friend.date
                 }
                 
                 friendsArray.push(status)
@@ -41,6 +43,7 @@ angular.module("LifeReelApp")
                     //if the user in the results matches a friend in the friendsArray, set the pendingStatus as the current status of the friendship
                     if(result.uid === friend.friendUID) {
                         result.pendingStatus = friend.pending
+                        result.dateSent = friend.dateSent
                     }
                 })
             })
@@ -66,5 +69,12 @@ angular.module("LifeReelApp")
             "pending": true //default of pending request is true
         }
         FriendsFactory.add(newFriend)
+        $scope.userList = []
+        $scope.searchString = ""
+        $timeout(()=> {
+            FriendsFactory.sentRequests()
+            $timeout()
+            // $location.url("/friends/pending")
+        }, 500)
     }
 })

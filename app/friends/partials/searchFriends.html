@@ -8,7 +8,7 @@
     <div ng-repeat="user in userList">
         <p>{{user.fullName}}</p>
         <button ng-click="addFriend(user)" ng-if="user.pendingStatus !== true &&user.pendingStatus !== false">Add as Friend</button>
-        <i ng-if="user.pendingStatus === true">Friend Request Pending</i>
+        <i ng-if="user.pendingStatus === true">Friend Request Sent on {{user.dateSent | date:"shortDate"}}</i>
         <i ng-if="user.pendingStatus === false">Current Friend</i>
         
     </div>

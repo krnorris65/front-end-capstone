@@ -1,7 +1,7 @@
 angular.module("LifeReelApp")
 .controller("ReceivedCtrl", function($scope, FriendsFactory, UserFactory, $timeout, $location) {
 
-    $scope.heading = "Received Requests"
+    $scope.heading = "Pending Requests"
     $scope.receivedRequests = []
 
   
