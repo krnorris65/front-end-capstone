@@ -4,6 +4,31 @@ angular.module("LifeReelApp")
     $scope.heading = "Find New Friends"
     $scope.userList = []
 
+    let friendsArray = []
+    //checks to see if what friend relationships already exist (both pending and not)
+    if(FriendsFactory.sentCache !== null || FriendsFactory.receivedCache !== null) {
+        if(FriendsFactory.sentCache.length > 0){
+            FriendsFactory.sentCache.forEach(friend => {
+                const status = {
+                    "friendUID": friend.receiverUID,
+                    "pending": friend.pending
+                }
+                
+                friendsArray.push(status)
+            })
+        }
+
+        if(FriendsFactory.receivedCache.length > 0){
+            FriendsFactory.receivedCache.forEach(friend => {
+                const status = {
+                    "friendUID": friend.senderUID,
+                    "pending": friend.pending
+                }
+                
+                friendsArray.push(status)
+            })
+        }
+    }
 
     $scope.findUser = function (search) {
         //if user doesn't enter anything in the search bar then nothing is returned
@@ -11,6 +36,8 @@ angular.module("LifeReelApp")
             const searchedName = search.toLowerCase() //converts string to lowercase
             const foundUsers = FriendsFactory.find(searchedName) //filters through cached users to find users that contain the searched name; doesn't include current user
             
+            console.log("search results",foundUsers)
+            console.log("friends", friendsArray)
             //set userList array as the search result
             $scope.userList = foundUsers
             
