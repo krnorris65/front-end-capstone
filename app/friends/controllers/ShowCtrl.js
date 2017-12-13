@@ -15,10 +15,11 @@ angular.module("LifeReelApp")
                             let friendObj = {
                                 "friendName": friend.receiverName,
                                 "friendUID": friend.receiverUID,
-                                "friendKey": friend.friendID,
+                                "friendKey": friend.friendId,
                                 "date": friend.date
                             }
                             $scope.allFriends.push(friendObj)
+                            debugger
                         }
                     })
                 }
@@ -34,6 +35,7 @@ angular.module("LifeReelApp")
                                 "date": friend.date
                             }
                             $scope.allFriends.push(friendObj)
+                            debugger
                         }
                     })
                 }
@@ -43,7 +45,7 @@ angular.module("LifeReelApp")
 
         $scope.removeFriend = (friend) => {
             FriendsFactory.delete(friend.friendKey)
-    
+
         }
 
             
