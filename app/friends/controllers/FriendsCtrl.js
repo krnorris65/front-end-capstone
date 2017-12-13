@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-    .controller("FriendsCtrl", function($scope, $location, FriendsFactory, $timeout){
+    .controller("FriendsCtrl", function($scope, $location, FriendsFactory, $timeout, $route){
 
         $scope.heading = "Current Friends"
 
@@ -43,6 +43,10 @@ angular.module("LifeReelApp")
         }
         $scope.removeFriend = (friend) => {
             FriendsFactory.delete(friend.friendKey)
+            $timeout(() => {
+                $route.reload()
+
+            }, 300)
 
         }
         
