@@ -50,6 +50,7 @@ angular.module("LifeReelApp")
 
             //set userList array as the search result
             $scope.userList = foundUsers
+            $scope.searchString = ""
             
             //if no user found then alert user
             if(foundUsers.length === 0) {
@@ -71,10 +72,10 @@ angular.module("LifeReelApp")
         FriendsFactory.add(newFriend)
         $scope.userList = []
         $scope.searchString = ""
-        $timeout(()=> {
-            FriendsFactory.sentRequests()
-            $timeout()
-            // $location.url("/friends/pending")
-        }, 500)
+        // $timeout(()=> {
+        //     FriendsFactory.sentRequests()
+        //     $timeout()
+        //     // $location.url("/friends/pending")
+        // }, 500)
     }
 })

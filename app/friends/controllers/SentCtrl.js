@@ -5,9 +5,17 @@ angular.module("LifeReelApp")
         $scope.sentRequests = []
 
         // //if you sent someone a friend request and they have not confirmed it yet then it appears here
-
-        $scope.sentRequests = FriendsFactory.sentCache.filter(friend => {
-            return friend.pending === true
+        FriendsFactory.sentRequests().then(friends => {
+            friends.forEach(friend => {
+                if(friend.pending === true) {
+                    $timeout()
+                    $scope.sentRequests.push(friend)
+                }
+            })
+  
         })
 
     })
+
+
+    
