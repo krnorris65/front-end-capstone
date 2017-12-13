@@ -38,6 +38,9 @@ angular.module("LifeReelApp").config(function ($routeProvider) {
 			controller: "FriendsCtrl"
 		}).when("/friends/pending", {
 			templateUrl: "app/friends/partials/pending.html"
+		}).when("/friends/reel/:friendId", {
+			templateUrl: "app/friends/partials/friendReel.html",
+			controller: "FriendReelCtrl"
 		})
 		.otherwise("/auth")
 

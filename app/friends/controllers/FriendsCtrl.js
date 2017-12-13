@@ -37,11 +37,15 @@ angular.module("LifeReelApp")
   
         })
         
-        
+        $scope.friendReel = (friend) => {
+            $location.url("/friends/pending")
+            
+        }
         $scope.removeFriend = (friend) => {
             FriendsFactory.delete(friend.friendKey)
 
         }
+        
 
         $scope.showPending = () => {
             $location.url("/friends/pending")

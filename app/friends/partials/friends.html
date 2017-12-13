@@ -4,12 +4,12 @@
     
     <div ng-repeat="friend in allFriends">
         <p>{{friend.friendName}} <i>Friends since {{friend.date | date:"shortDate"}}</i></p>
+        <a href="#!/friends/reel/{{friend.friendUID}}">View Reel</a>
         <button ng-click="removeFriend(friend)">Remove Friend</button>
     </div>
 
-<div>
+</section>
+<section>
     <button ng-click="showPending()">Pending Requests</button>
     <button ng-click="showCache()">Testing Cache</button>
-</div>
-      
 </section>

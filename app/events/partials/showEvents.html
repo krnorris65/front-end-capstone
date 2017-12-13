@@ -21,7 +21,7 @@
     
 </div>
 
-    <div ng-repeat="segment in eventArray | orderBy: ['-rating', 'date']" class="segment" id="{{segment.eventId}}">
+    <div ng-repeat="segment in eventArray | orderBy: 'date'" class="segment" id="{{segment.eventId}}">
         <h3 class+"title">{{segment.title}}</h3>
         <p "date">{{segment.date | date:"longDate"}}</p>
         <p "rating">{{segment.rating}}</p>

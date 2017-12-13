@@ -80,6 +80,25 @@ angular.module("LifeReelApp")
                         console.log(error)
                     })
             }
-        }
+        },
+        "friendEvents": {
+            value: function (friendId) {
+                return firebase.auth().currentUser.getToken(true)
+                    .then(idToken => {
+                        return $http({
+                            "url": `https://life-reel.firebaseio.com/events.json?auth=${idToken}&orderBy="userUID"&equalTo="${friendId}"`, //only gets that user from database
+                            "method": "GET"
+                        })
+                    }).then(response => {
+                        const data = response.data //user information as an object of objects
+                        const results = Object.keys(data).map(key => { //turns object into an array from the firebase keys 
+                            data[key].eventId = key //stores firebase key as the eventId
+                            return data[key]
+                        }) //and returns the first index since there will only ever be one
+                        return results //single object of user info
+                    
+                    })
+            }
+        },
     })
 })
