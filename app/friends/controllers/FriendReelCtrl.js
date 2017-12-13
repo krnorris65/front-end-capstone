@@ -1,7 +1,12 @@
 angular.module("LifeReelApp")
-    .controller("FriendReelCtrl", function($scope, EventFactory, $routeParams, $timeout){
+    .controller("FriendReelCtrl", function($scope, EventFactory, FriendsFactory, $routeParams, $timeout, $location){
 
-        $scope.heading = "Friend's Reel"
+        
+        FriendsFactory.currentFriend($routeParams.friendId).then(friend => {
+            const firstName = friend.first
+            
+            $scope.heading = `${firstName}'s Reel`
+        })
 
         EventFactory.friendEvents($routeParams.friendId).then(events => {
             $timeout(() => {
