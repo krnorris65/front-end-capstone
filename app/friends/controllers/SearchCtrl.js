@@ -45,9 +45,6 @@ angular.module("LifeReelApp")
                 })
             })
 
-            
-            console.log("search results",foundUsers)
-            console.log("friends", friendsArray)
             //set userList array as the search result
             $scope.userList = foundUsers
             
