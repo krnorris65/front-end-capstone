@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-.controller("ReceivedCtrl", function($scope, FriendsFactory, UserFactory, $timeout, $location) {
+.controller("ReceivedCtrl", function($scope, FriendsFactory, UserFactory, $timeout, $location, $route) {
 
     $scope.heading = "Pending Requests"
     $scope.receivedRequests = []
@@ -32,7 +32,6 @@ angular.module("LifeReelApp")
     $scope.deleteRequest = (friend) => {           
         //deletes friend request
         FriendsFactory.delete(friend.friendId)
-        
         //brings user back to their friends
         $timeout( () => {
             $location.url("/friends/list")
