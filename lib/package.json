@@ -17,6 +17,7 @@
   "devDependencies": {
     "eslint": "^4.12.1",
     "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^20.1.0"
   }

@@ -17,5 +17,4 @@ angular.module("LifeReelApp")
             }, 100)
         })
 
-
     })
