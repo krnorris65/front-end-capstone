@@ -1,8 +1,15 @@
 <section>
 
-    <div ng-include="'./app/friends/partials/showFriends.html'"></div>
-    <div ng-include="'./app/friends/partials/sentRequests.html'"></div>
-    <div ng-include="'./app/friends/partials/receivedRequests.html'"></div>
-    <div ng-include="'./app/friends/partials/searchFriends.html'"></div>
+    <h1>{{heading}}</h1>
+    
+    <div ng-repeat="friend in allFriends">
+        <p>{{friend.friendName}} <i>Friends since {{friend.date | date:"shortDate"}}</i></p>
+        <button ng-click="removeFriend(friend)">Remove Friend</button>
+    </div>
+
+<div>
+    <button ng-click="showPending()">Pending Requests</button>
+    <button ng-click="showCache()">Testing Cache</button>
+</div>
       
 </section>

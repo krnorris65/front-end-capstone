@@ -36,6 +36,8 @@ angular.module("LifeReelApp").config(function ($routeProvider) {
 		}).when("/friends/list", {
 			templateUrl: "app/friends/partials/friends.html",
 			controller: "FriendsCtrl"
+		}).when("/friends/pending", {
+			templateUrl: "app/friends/partials/pending.html"
 		})
 		.otherwise("/auth")
 

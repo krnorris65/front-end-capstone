@@ -19,7 +19,6 @@ angular.module("LifeReelApp")
                                 "date": friend.date
                             }
                             $scope.allFriends.push(friendObj)
-                            debugger
                         }
                     })
                 }
@@ -35,7 +34,6 @@ angular.module("LifeReelApp")
                                 "date": friend.date
                             }
                             $scope.allFriends.push(friendObj)
-                            debugger
                         }
                     })
                 }

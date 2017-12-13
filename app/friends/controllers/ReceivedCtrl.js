@@ -4,8 +4,6 @@ angular.module("LifeReelApp")
     $scope.heading = "Received Requests"
     $scope.receivedRequests = []
 
-
-
     const reloadRequests = () => {
         FriendsFactory.receivedRequests().then(friends => {
             let unconfirmed = friends.filter(friend => {

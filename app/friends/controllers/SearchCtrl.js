@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-.controller("FriendsCtrl", function($scope, FriendsFactory, UserFactory, $timeout){ 
+.controller("SearchCtrl", function($scope, FriendsFactory, UserFactory, $timeout){ 
     
     $scope.heading = "Find New Friends"
     $scope.userList = []
