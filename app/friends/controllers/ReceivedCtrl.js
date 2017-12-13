@@ -1,20 +1,27 @@
 angular.module("LifeReelApp")
-.controller("ReceivedCtrl", function($scope, FriendsFactory, UserFactory, $timeout, $route) {
+.controller("ReceivedCtrl", function($scope, FriendsFactory, UserFactory, $timeout, $window) {
 
     $scope.heading = "Received Requests"
     $scope.receivedRequests = []
 
 
 
-    FriendsFactory.receivedRequests().then(friends => {
-        let unconfirmed = friends.filter(friend => {
-            return friend.pending === true
+    const reloadRequests = () => {
+        FriendsFactory.receivedRequests().then(friends => {
+            let unconfirmed = friends.filter(friend => {
+                return friend.pending === true
+            })
+    
+            $timeout()
+            $scope.receivedRequests = unconfirmed
+           
         })
+    }
 
-        $timeout()
-        $scope.receivedRequests = unconfirmed
-       
-    })
+    reloadRequests()
+
+
+
 
     $scope.confirmRequest = (friend) => {
         const confirmedFriend = {
@@ -27,7 +34,10 @@ angular.module("LifeReelApp")
         }
 
         FriendsFactory.confirm(friend.friendId, confirmedFriend)
-        $route.reload()
+        $timeout( () => {
+            reloadRequests()
+
+        }, 300)
     }
 
 })

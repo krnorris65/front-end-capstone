@@ -1,11 +1,14 @@
 angular.module("LifeReelApp")
-    .controller("ShowCtrl", function($scope, FriendsFactory, $timeout){
+    .controller("ShowCtrl", function($scope, FriendsFactory, $timeout, $location){
 
         $scope.allFriends = []
 
         $scope.heading = "Added Friends"
         $timeout(()=>{
+            //the initial if statement prevents an error from being given when the app is initially loaded
             if(FriendsFactory.sentCache !== null || FriendsFactory.receivedCache !== null) {
+
+                //if the FriendsFactory.sentCache is greater than 0 then iterate through the array and for any friends who are not pending a confirmation then create a friend object and add it to the allFriends array
                 if(FriendsFactory.sentCache.length > 0){
                     FriendsFactory.sentCache.forEach(friend => {
                         if(friend.pending === false) {
@@ -20,7 +23,7 @@ angular.module("LifeReelApp")
                     })
                 }
     
-            
+                //if the FriendsFactory.receivedCache is greater than 0 then iterate through the array and for any friends who are not pending a confirmation then create a friend object and add it to the allFriends array
                 if(FriendsFactory.receivedCache.length > 0) {
                     FriendsFactory.receivedCache.forEach(friend => {
                         if(friend.pending === false) {
@@ -36,10 +39,12 @@ angular.module("LifeReelApp")
                 }
             }
 
-
-    
-        console.log($scope.allFriends)
         }, 500)
+
+        $scope.removeFriend = (friend) => {
+            FriendsFactory.delete(friend.friendKey)
+    
+        }
 
             
     })

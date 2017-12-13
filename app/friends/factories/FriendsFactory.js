@@ -97,6 +97,19 @@ angular.module("LifeReelApp")
                         console.log(error)
                     })
             }
+        },
+        "delete": {
+            value: function (key) {
+                return firebase.auth().currentUser.getToken(true)
+                    .then(idToken => {
+                        return $http({
+                            "url": `https://life-reel.firebaseio.com/friends/${key}/.json?auth=${idToken}`,
+                            "method": "DELETE"
+                        })
+                    }).catch(function(error) {
+                        console.log(error)
+                    })
+            }
         }
     })
 })

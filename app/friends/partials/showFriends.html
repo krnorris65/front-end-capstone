@@ -3,6 +3,7 @@
     
         <div ng-repeat="friend in allFriends">
             <p>{{friend.friendName}} <i>Friends since {{friend.date | date:"shortDate"}}</i></p>
+            <button ng-click="removeFriend(friend)">Remove Friend</button>
         </div>
     
     </section>
