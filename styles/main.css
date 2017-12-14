@@ -12,3 +12,63 @@ nav > ul > li {
     list-style-type: none;
     margin: 0 10px;
 }
+
+.clip {
+    width: 70%;
+    height: 150px;
+    margin: 0 4%;
+    padding-top: 25%;
+    position: relative;
+    background-color: #000;
+    background-image:  
+        linear-gradient(#008080, #008080),
+        linear-gradient(#008080, #008080), 
+        linear-gradient(#008080, #008080),
+        linear-gradient(#008080, #008080),
+        linear-gradient(#008080, #008080), 
+         
+        linear-gradient(#00FF00, #00FF00),
+        linear-gradient(#00FF00, #00FF00),
+        linear-gradient(#00FF00, #00FF00),
+        linear-gradient(#00FF00, #00FF00),
+        linear-gradient(#00FF00, #00FF00);
+
+    background-repeat:no-repeat;
+    background-position: 
+        5% 10%,
+        5% 30%,
+        5% 50%,
+        5% 70%, 
+        5% 90%,
+             
+        95% 10%,
+        95% 30%,
+        95% 50%,
+        95% 70%, 
+        95% 90%;
+    
+    background-size:
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%;
+}
+.clip .film {  
+  margin: 5% 19%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.film {
+  background-color: grey;
+}
