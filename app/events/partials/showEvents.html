@@ -1,25 +1,24 @@
 <section>
     <h1>{{heading}}</h1>
 
-<h4 ng-click="customReel = !customReel">{{subheading}}</h4>
-<div ng-show="customReel">
-    <div id="customizeDates">
-        <label for="startDate">Start Date:</label>
-        <input id="startDate" type="date" ng-model="min">
-        to
-        <label for="endDate">End Date:</label>
-        <input id="endDate" type="date" ng-model="max">
-        <button ng-click="setDates()">Set Dates</button>
-        <button ng-click="clearDates()">Clear</button>
-    </div>
-    <div id="partialList">
-        <button ng-click="highlights()">Show Highlights</button>
-        <button ng-click="lowlights()">Show Lowlights</button>
-        <button ng-click="showAll()">Show All</button>
-    </div>
+    <h4 ng-click="customReel = !customReel">{{subheading}}</h4>
+    <div ng-show="customReel">
+        <div id="customizeDates">
+            <label for="startDate">Start Date:</label>
+            <input id="startDate" type="date" ng-model="min">
+            to
+            <label for="endDate">End Date:</label>
+            <input id="endDate" type="date" ng-model="max">
+            <button ng-click="setDates()">Set Dates</button>
+            <button ng-click="clearDates()">Clear</button>
+        </div>
+        <div id="partialList">
+            <button ng-click="highlights()">Show Highlights</button>
+            <button ng-click="lowlights()">Show Lowlights</button>
+            <button ng-click="showAll()">Show All</button>
+        </div>
 
-    
-</div>
+    </div>
 
     <div ng-repeat="segment in eventArray | orderBy: 'date'" class="segment" id="{{segment.eventId}}">
         <h3 class+"title">{{segment.title}}</h3>
@@ -27,9 +26,7 @@
         <p "rating">{{segment.rating}}</p>
         <p "description">{{segment.description}}</p>
 
-
         <a href="#!/edit/{{segment.eventId}}">Edit/Delete</a>
-
 
     </div>
 

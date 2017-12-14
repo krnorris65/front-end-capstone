@@ -5,7 +5,7 @@
         <button ng-click="findUser(searchString)">Search</button>
     </span>
     
-    <div ng-repeat="user in userList">
+    <div ng-repeat="user in userList" class="friends, search">
         <p>{{user.fullName}}</p>
         <button ng-click="addFriend(user)" ng-if="user.pendingStatus !== true &&user.pendingStatus !== false">Add as Friend</button>
         <i ng-if="user.pendingStatus === true">Friend Request Sent on {{user.dateSent | date:"shortDate"}}</i>

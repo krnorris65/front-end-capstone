@@ -1,7 +1,7 @@
 angular.module("LifeReelApp")
     .controller("FriendsCtrl", function($scope, $location, FriendsFactory, $timeout, $route){
 
-        $scope.heading = "Current Friends"
+        $scope.heading = "Friends"
 
         $scope.allFriends = []
 

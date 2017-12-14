@@ -2,15 +2,15 @@
 
     <h1>{{heading}}</h1>
     
-    <div ng-repeat="friend in allFriends">
+    <div ng-repeat="friend in allFriends" class="friends, current">
         <p>{{friend.friendName}} <i>Friends since {{friend.date | date:"shortDate"}}</i></p>
         <a href="#!/friends/reel/{{friend.friendUID}}">View Reel</a>
         <button ng-click="removeFriend(friend)">Remove Friend</button>
     </div>
 
 </section>
-<div ng-include="'./app/friends/partials/sentRequests.html'"></div>
+<section ng-include="'./app/friends/partials/sentRequests.html'"></section>
 
 <section>
-    <h3 ng-click="showPending()"><u>View Pending Requests</u></h3>
+    <h3 ng-click="showPending()"><u>Add New Friends</u></h3>
 </section>

@@ -1,7 +1,7 @@
 
 <button ng-click="backToReel()">Back to Your Reel</button>
-<div>
-    <h3>Edit This Segement</h3>
+<section id="editSegment">
+    <h3>Edit This Segment</h3>
 
     <div>
         Title: <input type="text" value="{{event.title}}" ng-model="editEvent.title"/>
@@ -32,9 +32,10 @@
         Private: <input type="checkbox" value="true" ng-checked="editEvent.private" ng-model="editEvent.private">
     </div>
     <button ng-click="saveEvent(editEvent)">Save</button>
-</div>
-<div>
-    <h3>Delete This Segement</h3>
+</section>
+
+<section id="deleteSegment">
+    <h3>Delete This Segment</h3>
     <!-- deletes the segment -->
     <button ng-click="deleteThis = !deleteThis">Delete</button>
     <div ng-show="deleteThis">
@@ -42,5 +43,5 @@
         <button ng-click="deleteEvent()">Yes</button>
         <button ng-click="deleteThis = !deleteThis">No</button>
     </div>
-</div>
+</section>
         
