@@ -4,6 +4,6 @@
         <div ng-repeat="friend in receivedRequests">
             <p>{{friend.senderName}} <i>Received on {{friend.date | date:"shortDate"}}</i></p>
             <button ng-click="confirmRequest(friend)">Confirm Request</button>
-            <button ng-click="deleteRequest(friend)">Delete Request</button>
+            <!-- <button ng-click="deleteRequest(friend)">Delete Request</button> -->
         </div>
     </section>

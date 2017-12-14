@@ -29,14 +29,14 @@ angular.module("LifeReelApp")
         }, 500)
     }
 
-    $scope.deleteRequest = (friend) => {           
-        //deletes friend request
-        FriendsFactory.delete(friend.friendId)
-        //brings user back to their friends
-        $timeout( () => {
-            $location.url("/friends/list")
+    // $scope.deleteRequest = (friend) => {           
+    //     //deletes friend request
+    //     FriendsFactory.delete(friend.friendId)
+    //     //brings user back to their friends
+    //     $timeout( () => {
+    //         $location.url("/friends/list")
 
-        }, 500)
-    }
+    //     }, 500)
+    // }
 
 })
