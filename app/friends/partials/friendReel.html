@@ -3,8 +3,8 @@
 
 <div ng-repeat="segment in eventArray | orderBy: 'date'" class="segment, clip" id="{{segment.eventId}}">
         <div class="film">
-                <h3 class="seg_title">{{segment.title}}</h3>
-                <p class="seg_date">{{segment.date | date:"longDate"}}</p>
+                <h1 class="seg_date">{{segment.date | date:"longDate"}}</h1>
+                <h1 class="seg_title">{{segment.title}}</h1>
                 <p class="seg_rating">{{segment.rating}}</p>
                 <p class="seg_description">{{segment.description}}</p>
         </div>
