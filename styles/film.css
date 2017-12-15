@@ -1,0 +1,64 @@
+.clip {
+    width: 70%;
+    min-width: 350px;
+    min-height: 80px;
+    margin: 0 4%;
+    padding-top: 25%;
+    position: relative;
+    background-color: #000;
+    background-image:
+        /*left side  */
+        linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff),
+        /* right side */
+        linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff),
+        linear-gradient(#fff, #fff);
+        
+
+    background-repeat:no-repeat;
+    background-position: 
+        /* left side */
+        3.5% 5%,
+        3.5% 27.5%,
+        3.5% 50%,
+        3.5% 72.5%, 
+        3.5% 95%,
+        /* right side */
+        96.5% 5%,
+        96.5% 27.5%,
+        96.5% 50%,
+        96.5% 72.5%, 
+        96.5% 95%;
+    
+    background-size:
+        /* left side */
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        /* right side */
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%,
+        9% 13%;
+}
+
+.film {  
+  margin: 2.5% 14%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: lightgray;
+  border-radius: 5px;
+}
