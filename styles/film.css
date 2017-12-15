@@ -61,4 +61,6 @@
   overflow: auto;
   background-color: lightgray;
   border-radius: 5px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif; 
 }
