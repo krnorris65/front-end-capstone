@@ -81,3 +81,8 @@
     right: 2px;
     z-index: 100;
 }
+
+.seg_edit img {
+    width: 35px;
+    height: 35px;
+}
