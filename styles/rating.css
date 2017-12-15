@@ -12,19 +12,20 @@
     opacity: 0;
 }
 
-.rating_star {
-    cursor: pointer;
-    position: relative;
-    display: block;
-    width: 16px;
-    height: 16px;
-    background: url("../img/ratingStar.png") 0 -16px;
+
+.rating:hover .rating_star:hover, .rating:hover .rating_star:hover ~ .rating_star, .rating_input:checked ~ .rating_star {
+    background-position: 0 0;
+    background: url("../img/star.png") 0 -16px;
     background-size: 16px 16px
 }
 
-
-.rating_star:hover {
-    background-position: 0 0;
-    background: url("../img/star.png") 0 -16px;
+.rating_star, .rating:hover .rating_star {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    float: right;
+    width: 16px;
+    height: 16px;
+    background: url("../img/ratingStar.png") 0 -16px;
     background-size: 16px 16px
 }
