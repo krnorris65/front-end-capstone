@@ -24,7 +24,42 @@
         <div class="film">
             <h1 class="seg_date">{{segment.date | date:"longDate"}}</h1>
             <h1 class="seg_title">{{segment.title}}</h1>
-            <p class="seg_rating">{{segment.rating}}</p>
+            <div ng-if="segment.rating === 5">
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 5"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 5"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 5"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 5"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 5"/>
+            </div>
+            <div ng-if="segment.rating === 4">
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 4"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 4"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 4"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 4"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 4"/>
+            </div>
+            <div ng-if="segment.rating === 3">
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 3"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 3"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 3"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 3"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 3"/>
+            </div>
+            <div ng-if="segment.rating === 2">
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 2"/>
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 2"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 2"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 2"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 2"/>
+            </div>
+            <div ng-if="segment.rating === 1">
+                <img  class="stars" src="../../../img/starFilled.png" alt="star rating 1"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 1"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 1"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 1"/>
+                <img  class="stars" src="../../../img/starEmpty.png" alt="star rating 1"/>
+            </div>
+
             <p class="seg_description">{{segment.description}}</p>
 
             <a class="seg_edit" href="#!/edit/{{segment.eventId}}"><img  src="../../../img/movieEdit.png"  width="40" height="40" alt="edit/delete icon"/></a>
@@ -34,3 +69,5 @@
     </div>
 
 </section>
+
+

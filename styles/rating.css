@@ -29,3 +29,8 @@
     background: url("../img/starEmpty.png") 0 -16px;
     background-size: 16px 16px
 }
+
+.stars {
+    width: 40px;
+    height: 40px;
+}
