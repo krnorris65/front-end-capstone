@@ -5,17 +5,19 @@
     <div class="bottom">
         <h1 class="form_heading">{{heading}}</h1>
 
-        <div class="form_label">
-            Title: <input class="form_title" type="text" ng-model="newEvent.title"/>
+        <div>
+            <span class="form_label">Title:</span> 
+            <input class="form_title" type="text" ng-model="newEvent.title"/>
         </div>
 
-        <div class="form_label">
-            Date: <input class="form_date" type="date" ng-model="date"/>
+        <div>
+            <span class="form_label">Date:</span> 
+            <input class="form_date" type="date" ng-model="date"/>
         </div>
 
 
         <span class="rating">
-            Rating:
+            <span class="form_label">Rating:</span>
             <input id="rating5" type="radio" name="rating" value="5" ng-model="rating" class="rating_input">
             <label for="rating5" class="rating_star"></label>
             <input id="rating4" type="radio" name="rating" value="4" ng-model="rating" class="rating_input">
@@ -29,12 +31,14 @@
         </span>
             
 
-        <div class="form_label">
-            Description: <textarea class="form_description" ng-model="newEvent.description"></textarea>
+        <div>
+            <span class="form_label">Description:</span> 
+            <textarea class="form_description" ng-model="newEvent.description"></textarea>
         </div>
 
-        <div class="form_label">
-            Private: <input class="form_private" type="checkbox" value="true" ng-model="newEvent.private" />
+        <div>
+            <span class="form_label">Private:</span> 
+            <input class="form_private" type="checkbox" value="true" ng-model="newEvent.private" />
         </div>
 
         <button ng-click="addEvent(newEvent)">Add</button>

@@ -1,5 +1,5 @@
 .clapper {
-    margin-top: 100px;
+    margin: 100px;
 }
 
 .bottom {
@@ -44,4 +44,17 @@ border: 1px solid black
 
 .form_heading {
     font-size: 1.75em;
+}
+
+.form_label {
+    font-size: 1.5em;
+}
+
+.form_title, .form_date, .form_description {
+    font-size: 1.25em
+}
+
+
+.form_description {
+    width: 90%
 }
