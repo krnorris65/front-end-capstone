@@ -3,16 +3,17 @@
 }
 
 .bottom {
-background-color: blue;
+background-color: black;
 min-height: 275px;
 min-width: 370px;
 width: 45%;
 text-align: center;
 padding-top: 1%;
-border: 1px solid black
+border: 1px solid black;
+color: lightgray
 }
 
-.top, .bottom-top {
+.top, .bottom_top {
 background-color: black;
 background-image: 
     linear-gradient(white, white),
@@ -39,4 +40,8 @@ border: 1px solid black
 .top {
     transform-origin: -2px;
     transform: skewY(-6deg);
+}
+
+.form_heading {
+    font-size: 1.75em;
 }

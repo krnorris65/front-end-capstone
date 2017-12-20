@@ -15,7 +15,7 @@
 
 .rating:hover .rating_star:hover, .rating:hover .rating_star:hover ~ .rating_star, .rating_input:checked ~ .rating_star {
     background-position: 0 0;
-    background: url("../img/starFilled.png") 0 -20px;
+    background: url("../img/starFilledWhite.png") 0 -20px;
     background-size: 20px 20px
 }
 
@@ -26,11 +26,6 @@
     float: right;
     width: 20px;
     height: 20px;
-    background: url("../img/starEmpty.png") 0 -20px;
+    background: url("../img/starEmptyWhite.png") 0 -20px;
     background-size: 20px 20px
-}
-
-.stars {
-    width: 40px;
-    height: 40px;
 }
