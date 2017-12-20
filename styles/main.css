@@ -11,9 +11,8 @@ nav > ul {
     padding: 10px;
     margin: 0;
     display: flex;
-    /* flex-direction: row; */
     flex-flow: row wrap;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 nav > ul > li {
@@ -50,4 +49,17 @@ body {
 
 .content {
     margin-top: 100px;
+}
+
+button {
+    background-color: lightgray;
+    color: black;
+    font-size: .75em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid black
+}
+
+button:active {
+    box-shadow: inset 0 0 2px black;
 }
