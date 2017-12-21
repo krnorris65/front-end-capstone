@@ -1,5 +1,5 @@
 angular.module("LifeReelApp")
-    .controller("AddEventCtrl", function($scope, AuthFactory, EventFactory, $location){
+    .controller("AddEventCtrl", function($scope, AuthFactory, EventFactory, $location, $timeout){
 
         $scope.heading = "Add new segment" //adds title to page
 
@@ -15,6 +15,13 @@ angular.module("LifeReelApp")
             "rating": 0,
             "description": "",
             "private": false,
+        }
+
+        const showSnackbar = () => {
+            let snack = document.getElementById("snackbar")
+                // Add the "show" class to DIV
+                snack.className = "show"
+
         }
         
         $scope.addEvent = (event) => {
@@ -40,10 +47,13 @@ angular.module("LifeReelApp")
                 $scope.date = "" 
                 $scope.rating = ""
     
-                alert("A new segment has been add to your reel")
+                // shows snackbar that says a new segment has been added to the reel
+                showSnackbar()
                 
+                $timeout(() => {
+                    $scope.backHome()
+                }, 1000)
                 
-                $scope.backHome()
             }
 
 
