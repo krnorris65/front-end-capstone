@@ -3,38 +3,40 @@
 }
 
 .bottom {
-background-color: black;
-min-height: 275px;
-min-width: 370px;
-width: 45%;
-text-align: center;
-padding-top: 1%;
-border: 1px solid black;
-color: lightgray
+    margin: auto;
+    background-color: black;
+    min-height: 275px;
+    min-width: 370px;
+    width: 60%;
+    text-align: center;
+    padding-top: 1%;
+    border: 1px solid black;
+    color: lightgray;
 }
 
 .top, .bottom_top {
-background-color: black;
-background-image: 
-    linear-gradient(white, white),
-    linear-gradient(white, white),
-    linear-gradient(white, white),
-    linear-gradient(white, white);
-background-repeat: no-repeat;
-background-size: 
-    14% 100%, 
-    14% 100%, 
-    14% 100%, 
-    14% 100%;
-background-position: 
-    6%, 
-    36%, 
-    66%, 
-    96%;
-min-height: 55px;
-min-width: 370px;
-width: 45%;
-border: 1px solid black
+    margin: auto;
+    background-color: black;
+    background-image: 
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white),
+        linear-gradient(white, white);
+    background-repeat: no-repeat;
+    background-size: 
+        14% 100%, 
+        14% 100%, 
+        14% 100%, 
+        14% 100%;
+    background-position: 
+        6%, 
+        36%, 
+        66%, 
+        96%;
+    min-height: 55px;
+    min-width: 370px;
+    width: 60%;
+    border: 1px solid black;
 }
 
 .top {
