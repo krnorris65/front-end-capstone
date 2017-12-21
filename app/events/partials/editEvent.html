@@ -42,12 +42,13 @@
         <button ng-click="saveEvent(editEvent)">Save</button>
         <button ng-click="backToReel()">Cancel</button>
         <img id="trashIcon" src="../../../img/trashWhite.png" alt="delete trash can" ng-click="deleteThis = !deleteThis">
+        <section id="deleteSegment" ng-show="deleteThis">
+            <p>Are you sure you want to delete this segment?</p>
+            <button ng-click="deleteEvent()">Yes</button>
+            <button ng-click="deleteThis = !deleteThis">No</button>
+        </section>
     </div>
 </section>
 
-<section ng-show="deleteThis">
-    Are you sure you want to delete this segment?
-    <button ng-click="deleteEvent()">Yes</button>
-    <button ng-click="deleteThis = !deleteThis">No</button>
-</section>
+
         

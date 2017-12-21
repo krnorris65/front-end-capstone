@@ -63,6 +63,7 @@
     width: 90%
 }
 
+/* specific to edit clapper */
 #trashIcon {
     width: 30px;
     height: 30px;
@@ -71,3 +72,13 @@
     right: 5px;
 }
 
+#deleteSegment {
+    background-color: white;
+    color: black;
+    position: absolute;
+    z-index: 1; 
+    width: 98%;
+    border-radius: 10px;
+    border: 5px solid black;
+    bottom: 0px;
+}
