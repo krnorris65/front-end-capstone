@@ -9,20 +9,18 @@ nav {
 }
 nav > ul {
     padding: 10px;
-    margin: 0;
+    margin: 0 100px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
+    align-items: center;
     justify-content: center;
 }
 
+
 nav > ul > li {
-    /* display: inline; */
     list-style-type: none;
     margin: 0 10px;
     padding: 5px;
-    color: white;
- 
-
 }
 
 nav a:not(#logo) {
@@ -37,10 +35,21 @@ nav a:hover:not(#logo) {
     color: black
 }
 
-#logoIcon {
-    height: 40px;
-
+.align-right {
+    position: fixed;
+    right: 10px;
 }
+
+.align-left {
+    position: fixed;
+    left: 10px;
+}
+
+
+#logoIcon {
+    height: 45px;
+}
+
 
 body {
     font-family: 'Poppins', sans-serif;
