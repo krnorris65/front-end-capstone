@@ -1,6 +1,6 @@
 <ul ng-controller="NavCtrl">
-        <li ng-if="isAuthenticated()"><img id="logo" src="../../../img/reel.jpg" alt="movie reel"></li>
-        <li ng-if="isAuthenticated()" id="companyName">Life Reel</li>
+        <li ng-if="isAuthenticated()"><a href="#!/landing" id="logo"><img id="logoIcon" src="../../../img/reel.jpg" alt="movie reel" ></a></li>
+        <!-- <li ng-if="isAuthenticated()" id="companyName">Life Reel</li> -->
         <li ng-if="isAuthenticated()"><a href="#!/landing">Home</a></li>
         <li ng-if="isAuthenticated()"><a href="#!/reel">View Your Reel</a></li>
         <li ng-if="isAuthenticated()"><a href="#!/friends/list">Friends</a></li>

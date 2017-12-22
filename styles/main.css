@@ -25,19 +25,19 @@ nav > ul > li {
 
 }
 
-nav a {
+nav a:not(#logo) {
     text-decoration: none;
     border: 2px solid white;
     color: white;
     padding: 5px;
 }
 
-nav a:hover {
+nav a:hover:not(#logo) {
     background-color: white;
     color: black
 }
 
-#logo {
+#logoIcon {
     height: 40px;
 
 }
