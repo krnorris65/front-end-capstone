@@ -6,6 +6,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 100;
+    min-width: 575px;
 }
 nav > ul {
     padding: 10px;
@@ -44,6 +45,7 @@ nav a:hover:not(#logo) {
     position: fixed;
     left: 10px;
 }
+
 
 
 #logoIcon {
