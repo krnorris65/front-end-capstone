@@ -1,40 +1,42 @@
 <h1 class="reelTitle">{{heading}}</h1>
-<section>
-    <h4 class="customizedReel" ng-click="customReel = !customReel">{{subheading}}</h4>
-    <div class="customizedReel" ng-show="customReel">
-        <div class="customizeDates">
-            <p>Select the dates of the segments you want to see.</p>
-            <label for="startDate">Start Date:</label>
-            <input id="startDate" type="date" ng-model="min">
-            to <br>
-            <label for="endDate">End Date:</label>
-            <input id="endDate" type="date" ng-model="max"> 
-            <br>
-            <button ng-click="setDates()">Set Dates</button>
-            <button ng-click="clearDates()">Clear</button>
+<section >
+    <div class="customizedReel">
+        <h4 class="customizedTitle" ng-click="customReel = !customReel">{{subheading}}</h4>
+        <div class="customOptions" ng-show="customReel">
+            <div class="customizeDates">
+                <label for="startDate">Start Date:</label>
+                <input id="startDate" type="date" ng-model="min">
+                to <br>
+                <label for="endDate">End Date:</label>
+                <input id="endDate" type="date" ng-model="max"> 
+                <br>
+                <button class="setButton" ng-click="setDates()">
+                    Set Dates
+                    <p class="setText">Only show segments between these dates</p>
+                </button>
+                <button ng-click="clearDates()">Clear</button>
+            </div>
+            <div class="partialList">
+    
+                <button class="highButton" ng-click="highlights()">
+                    Show Highlights 
+                    <p class="highText">Only show segments with a rating of 3 or higher</p>
+                </button>
+                
+    
+                <button class="lowButton" ng-click="lowlights()">
+                    Show Lowlights 
+                    <p class="lowText">Only show segments with a rating of 2 or lower</p>
+                </button>
+                
+    
+                <br>
+                <button ng-click="showAll()">Show All</button>
+            </div>
+    
         </div>
-        <div class="partialList">
-
-            <button class="highButton" ng-click="highlights()">
-                Show Highlights 
-                <p class="highText">Only shows segments with a rating of 3 or higher</p>
-            </button>
-            
-
-            <button class="lowButton" ng-click="lowlights()">
-                Show Lowlights 
-                <p class="lowText">Only shows segments with a rating of 2 or lower</p>
-            </button>
-            
-
-            <br>
-            <button class="showButton" ng-click="showAll()">
-                Show All
-                <p class="showText">Shows all segments</p>
-            </button>
-        </div>
-
     </div>
+    
 
     <div ng-repeat="segment in eventArray | orderBy: 'date'" class="clip" id="{{segment.eventId}}">
         <div class="film">

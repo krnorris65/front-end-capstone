@@ -1,10 +1,23 @@
 .customizedReel {
     text-align: left;
-    cursor: pointer;
     width: 60%;
     margin: auto;
     min-width: 350px;
+}
+
+.customOptions {
     display: flex;
+
+}
+
+.customizedTitle {
+    display: inline;
+
+}
+
+.customizedTitle:hover {
+    cursor: pointer;
+    font-size: 1.1em;
 }
 
 .customizeDates {
@@ -16,25 +29,38 @@
     text-align: center;
 }
 
-
-.lowText, .highText, .showText {
+/* the css below will display a description of what pressing a button on the customize reel will do */
+.lowText, .highText, .setText {
     display: none;
-    width: 120px;
+    width: 150px;
     background-color: black;
     color: #fff;
     text-align: center;
     padding: 5px;
     border-radius: 6px;
- 
-    /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
+    border: 1px solid white;
+    
 }
 
-.highButton:hover .highText, .lowButton:hover .lowText, .showButton:hover .showText {
+/* shows the text when the button is hovered over */
+.highButton:hover .highText, .lowButton:hover .lowText, .setButton:hover .setText {
     display: initial;
+    margin: 8px;
+
 }
 
+/* adds an arrow to the text bubble */
+.highText::after, .lowText::after, .setText::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 3%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
 
 
 
