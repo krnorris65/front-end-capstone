@@ -68,7 +68,8 @@ button {
     font-size: .75em;
     font-weight: bold;
     border-radius: 5px;
-    border: 1px solid black
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 button:active {

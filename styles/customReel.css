@@ -1,0 +1,43 @@
+.customizedReel {
+    text-align: left;
+    cursor: pointer;
+    width: 60%;
+    margin: auto;
+    min-width: 350px;
+    display: flex;
+}
+
+.customizeDates {
+    width: 50%;
+}
+
+.partialList {
+    width: 50%;
+    text-align: center;
+}
+
+
+.lowText, .highText, .showText {
+    display: none;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+.highButton:hover .highText, .lowButton:hover .lowText, .showButton:hover .showText {
+    display: initial;
+}
+
+
+
+
+
+
+

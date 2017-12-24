@@ -5,7 +5,7 @@ angular.module("LifeReelApp")
         FriendsFactory.currentFriend($routeParams.friendId).then(friend => {
             const firstName = friend.first
             
-            $scope.heading = `${firstName}'s Reel`
+            $scope.heading = `${firstName}'s Life Reel`
         })
 
         EventFactory.friendEvents($routeParams.friendId).then(events => {

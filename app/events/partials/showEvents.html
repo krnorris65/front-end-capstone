@@ -1,21 +1,37 @@
+<h1 class="reelTitle">{{heading}}</h1>
 <section>
-    <h1>{{heading}}</h1>
-
-    <h4 ng-click="customReel = !customReel">{{subheading}}</h4>
-    <div ng-show="customReel">
-        <div id="customizeDates">
+    <h4 class="customizedReel" ng-click="customReel = !customReel">{{subheading}}</h4>
+    <div class="customizedReel" ng-show="customReel">
+        <div class="customizeDates">
+            <p>Select the dates of the segments you want to see.</p>
             <label for="startDate">Start Date:</label>
             <input id="startDate" type="date" ng-model="min">
-            to
+            to <br>
             <label for="endDate">End Date:</label>
-            <input id="endDate" type="date" ng-model="max">
+            <input id="endDate" type="date" ng-model="max"> 
+            <br>
             <button ng-click="setDates()">Set Dates</button>
             <button ng-click="clearDates()">Clear</button>
         </div>
-        <div id="partialList">
-            <button ng-click="highlights()">Show Highlights</button>
-            <button ng-click="lowlights()">Show Lowlights</button>
-            <button ng-click="showAll()">Show All</button>
+        <div class="partialList">
+
+            <button class="highButton" ng-click="highlights()">
+                Show Highlights 
+                <p class="highText">Only shows segments with a rating of 3 or higher</p>
+            </button>
+            
+
+            <button class="lowButton" ng-click="lowlights()">
+                Show Lowlights 
+                <p class="lowText">Only shows segments with a rating of 2 or lower</p>
+            </button>
+            
+
+            <br>
+            <button class="showButton" ng-click="showAll()">
+                Show All
+                <p class="showText">Shows all segments</p>
+            </button>
         </div>
 
     </div>
