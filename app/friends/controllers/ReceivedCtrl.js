@@ -9,6 +9,7 @@ angular.module("LifeReelApp")
         return friend.pending === true
     })
 
+    //allows users to confirm if they want to add the person who sent the request as a friend
     $scope.confirmRequest = (friend) => {
         const confirmedFriend = {
             "senderUID": friend.senderUID, 

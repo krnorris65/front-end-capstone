@@ -3,8 +3,8 @@
     <h1>{{heading}}</h1>
     
     <div ng-repeat="friend in allFriends" class="friends, current">
-        <p>{{friend.friendName}} <i>Friends since {{friend.date | date:"shortDate"}}</i></p>
-        <a href="#!/friends/reel/{{friend.friendUID}}">View Reel</a>
+        <p class="friendName">{{friend.friendName}} <i class="friendDate">Friends since {{friend.date | date:"shortDate"}}</i></p>
+        <a href="#!/friends/reel/{{friend.friendUID}}" class="friendReel">View Reel</a>
         <button ng-click="removeFriend(friend)">Remove Friend</button>
     </div>
 

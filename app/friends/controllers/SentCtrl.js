@@ -4,7 +4,7 @@ angular.module("LifeReelApp")
         $scope.heading = "Sent Requests"
         $scope.sentRequests = []
 
-        // //if you sent someone a friend request and they have not confirmed it yet then it appears here
+        //if you sent someone a friend request and they have not confirmed it yet then it appears here
         FriendsFactory.sentRequests().then(friends => {
             friends.forEach(friend => {
                 if(friend.pending === true) {

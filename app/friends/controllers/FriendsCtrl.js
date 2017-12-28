@@ -5,6 +5,7 @@ angular.module("LifeReelApp")
 
         $scope.allFriends = []
 
+        // filters through sent requests and adds any friends that have a pending statues of false and adds them to the allFriends array
         FriendsFactory.sentRequests().then(friends => {
             friends.forEach(friend => {
                 if(friend.pending === false) {
@@ -21,6 +22,7 @@ angular.module("LifeReelApp")
   
         })
 
+        // filters through received requests and adds any friends that have a pending statues of false and adds them to the allFriends array
         FriendsFactory.receivedRequests().then(friends => {
             friends.forEach(friend => {
                 if(friend.pending === false) {
@@ -36,11 +38,8 @@ angular.module("LifeReelApp")
             })
   
         })
-        
-        $scope.friendReel = (friend) => {
-            $location.url("/friends/pending")
-            
-        }
+
+        // removes friends from friend list
         $scope.removeFriend = (friend) => {
             FriendsFactory.delete(friend.friendKey)
             $timeout(() => {
@@ -50,14 +49,10 @@ angular.module("LifeReelApp")
 
         }
         
-
+        // shows pending friend requests
         $scope.showPending = () => {
             $location.url("/friends/pending")
         }
         
-        $scope.showCache = () => {
-            console.log("sent", FriendsFactory.sentCache)
-            console.log("received", FriendsFactory.receivedCache)
-        }
 
     })
