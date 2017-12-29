@@ -5,7 +5,8 @@ angular.module("LifeReelApp")
     $scope.userList = []
 
     let friendsArray = []
-    //checks to see if what friend relationships already exist (both pending and not)
+
+    //checks to see if what friend relationships already exist (both pending and not). if a friend relationship exists then the addFriend button will not appear. in partial: depending on if pending === true || pending === false will determine which text field appears under the user's name
     if(FriendsFactory.sentCache !== null || FriendsFactory.receivedCache !== null) {
         if(FriendsFactory.sentCache.length > 0){
             FriendsFactory.sentCache.forEach(friend => {
@@ -32,6 +33,7 @@ angular.module("LifeReelApp")
         }
     }
 
+    //searchs for user in firebase; will not return current user
     $scope.findUser = function (search) {
         //if user doesn't enter anything in the search bar then nothing is returned
         if(search !== "" && search !== undefined) {
@@ -59,11 +61,13 @@ angular.module("LifeReelApp")
 
     }
 
+    //clears search results and/or the search bar
     $scope.clearUsers = function () {
         $scope.userList = []
         $scope.searchString = ""
     }
 
+    //if user wants to add the person as a friend then it creates a friend relationship with a pending status of true and then clears the search results and search bar
     $scope.addFriend = (user) => {
         const newFriend = {
             "senderUID": UserFactory.cache.uid, //sets current user as the sender
@@ -76,10 +80,6 @@ angular.module("LifeReelApp")
         FriendsFactory.add(newFriend)
         $scope.userList = []
         $scope.searchString = ""
-        // $timeout(()=> {
-        //     FriendsFactory.sentRequests()
-        //     $timeout()
-        //     // $location.url("/friends/pending")
-        // }, 500)
+
     }
 })

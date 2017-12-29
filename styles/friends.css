@@ -38,3 +38,21 @@ border: 2px solid blue;
     border: 2px solid green;
 
 }
+
+.current {
+    display: flex;
+    align-items: center;
+}
+
+.friendReel {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.deleteFriend {
+    cursor: pointer;
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+}

@@ -1,9 +1,20 @@
 <h1 class="pageHeading">{{heading}}</h1>
 <section id="currentFriends">
     <div ng-repeat="friend in allFriends" class="friends, current">
-        <p class="friendName">{{friend.friendName}} <i class="friendDate">Friends since {{friend.date | date:"shortDate"}}</i></p>
-        <a href="#!/friends/reel/{{friend.friendUID}}" class="friendReel">View Reel</a>
-        <button ng-click="removeFriend(friend)">Remove Friend</button>
+        <a href="#!/friends/reel/{{friend.friendUID}}"><img src="../../../img/reelBlack.png" alt="view friend reel" class="friendReel"></a>
+        <p class="friendName"> {{friend.friendName}} 
+            <i class="friendDate">Friends since {{friend.date | date:"shortDate"}}</i>
+        </p>
+        <!-- <a href="#!/friends/reel/{{friend.friendUID}}" class="friendReel">View Reel</a> -->
+        <!-- <button ng-click="removeFriend(friend)">Remove Friend</button> -->
+        
+        
+        <img src="../../../img/trashBlack.png" alt="delete friend" ng-click="deleteUser = !deleteUser" class="deleteFriend">
+        <section id="deleteFriend" ng-show="deleteUser">
+            <p>Are you sure you want to remove {{friend.friendName}} as your friend? <br>You will no longer be able to view their Life Reel</p>
+            <button ng-click="removeFriend(friend)">Yes</button>
+            <button ng-click="deleteUser = !deleteUser">No</button>
+        </section>
     </div>
 
 </section>
