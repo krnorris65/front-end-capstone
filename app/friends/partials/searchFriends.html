@@ -3,13 +3,15 @@
     <span>
         <input type="text" ng-model="searchString" placeholder="Search">
         <button ng-click="findUser(searchString)">Search</button>
+        <button ng-click="clearUsers()">Clear</button>
     </span>
     
     <div ng-repeat="user in userList" class="friends, search">
-        <p>{{user.fullName}}</p>
+        <p class="friendName">{{user.fullName}} 
+            <i ng-if="user.pendingStatus === true" class="friendDate">Friend Request Sent on {{user.dateSent | date:"shortDate"}}</i>
+            <i ng-if="user.pendingStatus === false" class="friendDate">Current Friend</i>
+        </p>
         <button ng-click="addFriend(user)" ng-if="user.pendingStatus !== true &&user.pendingStatus !== false">Add as Friend</button>
-        <i ng-if="user.pendingStatus === true">Friend Request Sent on {{user.dateSent | date:"shortDate"}}</i>
-        <i ng-if="user.pendingStatus === false">Current Friend</i>
         
     </div>
 </section>

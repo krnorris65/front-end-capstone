@@ -50,7 +50,6 @@ angular.module("LifeReelApp")
 
             //set userList array as the search result
             $scope.userList = foundUsers
-            $scope.searchString = ""
             
             //if no user found then alert user
             if(foundUsers.length === 0) {
@@ -58,6 +57,11 @@ angular.module("LifeReelApp")
             } 
         }
 
+    }
+
+    $scope.clearUsers = function () {
+        $scope.userList = []
+        $scope.searchString = ""
     }
 
     $scope.addFriend = (user) => {
