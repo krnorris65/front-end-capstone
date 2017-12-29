@@ -1,7 +1,16 @@
-<div>
+<h1 class="pageHeading">Welcome to Life Reel!</h1>
+<!-- <button ng-click="eventForm()">{{addButton}}</button> -->
+<div id="mainPage">
 
-    <h1 class="pageHeading">{{ heading }}</h1>
-    <button ng-click="eventForm()">{{addButton}}</button>
+    <section class="landingAction">
+        <img class="landingIcon" src="../../../img/movieClapper.png" alt="add segment button">
+        <h3 class="landingText" ng-click="eventForm()">Add New Segment</h3> 
+    </section>
+    <section class="landingAction">
+        <img class="landingIcon" src="../../../img/reelBlackFilled.png" alt="add segment button">
+        <h3 class="landingText" ng-click="viewReel()">View Reel</h3>
+    </section>
+    <!-- <section>See Viewers</section> -->
 
 
 </div>
