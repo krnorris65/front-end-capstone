@@ -30,6 +30,7 @@
     font-weight: normal;
     font-size: 1em;
     text-decoration: none;
+    border-radius: 8px;
 }
 
 .addFriend:hover, .currentList:hover, .addSegment:hover {
