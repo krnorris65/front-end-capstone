@@ -1,13 +1,28 @@
 
-nav {
+nav, footer {
     background-color: black;
     width: 100%;
     position: fixed;
-    top: 0;
     left: 0;
     z-index: 100;
     min-width: 575px;
 }
+
+nav {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+    text-align: right;
+}
+
+footer span {
+    color: white;
+    margin-right: 10px;
+    font-size: .9em;
+}
+
 nav > ul {
     padding: 10px;
     margin: 0 100px;
@@ -35,6 +50,7 @@ nav a:hover:not(#logo) {
     background-color: white;
     color: black
 }
+
 
 .align-right {
     position: fixed;
