@@ -1,0 +1,40 @@
+.friendName {
+    font-weight: bold;
+}
+
+.friendDate {
+    color: dimgray;
+    font-weight: normal;
+    display: block;
+    font-size: .8em;
+}
+
+.addFriend {
+    background-color: black;
+    border: 2px solid black;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    padding: 2px;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.addFriend:hover {
+    background-color: white;
+    color: black;
+}
+
+#currentFriends {
+border: 2px solid blue;
+}
+
+#sentRequests {
+    border: 2px solid purple;
+    
+}
+
+#receivedRequests {
+    border: 2px solid green;
+
+}

@@ -1,7 +1,7 @@
-<section ng-controller="SentCtrl">
+<section ng-controller="SentCtrl" id="sentRequests">
     <h1>{{heading}}</h1>
 
     <div ng-repeat="friend in sentRequests" class="friends, sent">
-        <p>{{friend.receiverName}} <i>Request Pending. Sent on {{friend.date | date:"shortDate"}}</i></p>
+        <p class="friendName">{{friend.receiverName}} <i class="friendDate">Request Pending. Sent on {{friend.date | date:"shortDate"}}</i></p>
     </div>
 </section>
