@@ -20,7 +20,7 @@
 }
 
 /* "buttons" to navigate between the main friend page and the pending request page */
-.addFriend, .currentList {
+.addFriend, .currentList, .addSegment {
     background-color: black;
     border: 2px solid black;
     color: white;
@@ -32,7 +32,7 @@
     text-decoration: none;
 }
 
-.addFriend:hover, .currentList:hover{
+.addFriend:hover, .currentList:hover, .addSegment:hover {
     background-color: white;
     color: black;
 }

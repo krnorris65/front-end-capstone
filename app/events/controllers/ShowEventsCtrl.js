@@ -70,6 +70,10 @@ angular.module("LifeReelApp")
             $scope.eventArray = allEvents
         }
 
+        $scope.newEvent = () => {
+            $location.url("/add")
+        }
+
 
 
 

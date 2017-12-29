@@ -38,6 +38,14 @@
     </div>
     
 
+    <div ng-if="eventArray.length === 0" class="clip">
+        <div class="film">
+            <h1>You have no segments</h1>
+            <a ng-click="newEvent()" class="addSegment">Add New Segment</a>
+        </div>
+    </div>
+    
+    
     <div ng-repeat="segment in eventArray | orderBy: 'date'" class="clip" id="{{segment.eventId}}">
         <div class="film">
                 <h1 class="seg_date">{{segment.date | date:"longDate"}}</h1>
