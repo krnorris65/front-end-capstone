@@ -1,3 +1,13 @@
+#mainFriends, #pendingRequests {
+    width: 80%;
+    margin: auto;
+}
+
+#sentRequests, #findFriends {
+    border-top: 5px solid black;
+
+}
+
 .friendName {
     font-weight: bold;
 }
@@ -9,7 +19,8 @@
     font-size: .8em;
 }
 
-.addFriend {
+/* "buttons" to navigate between the main friend page and the pending request page */
+.addFriend, .currentList {
     background-color: black;
     border: 2px solid black;
     color: white;
@@ -18,29 +29,22 @@
     padding: 2px;
     font-weight: normal;
     font-size: 1em;
+    text-decoration: none;
 }
 
-.addFriend:hover {
+.addFriend:hover, .currentList:hover{
     background-color: white;
     color: black;
 }
 
-
-#sentRequests {
-    border: 2px solid purple;
-    
-}
-
-#receivedRequests {
-    border: 2px solid green;
-
-}
-
-.current {
+/* formatting of the different friends "boxes" */
+.current, .received, .sent, .search {
     display: flex;
     align-items: center;
+    margin-left: 20px;
 }
 
+/* formating for current friends */
 .friendReel {
     width: 40px;
     height: 40px;
@@ -54,7 +58,7 @@
     height: 20px;
 }
 
-/* the css below will display a description of what pressing the icon will do */
+/* the css below will display a description of what pressing the reel icon will do */
 .viewFriendReel {
     display: none;
     background-color: black;
@@ -69,13 +73,14 @@
     
 }
 
-/* shows the text when the button is hovered over */
+/* shows the text when the reel icon is hovered over */
 .viewFriendIcon:hover .viewFriendReel {
     display: initial;
     margin-left: 43px;
     margin-top: -77px;
 }
 
+/* formatting of delete friend text box to make sure person is sure they want to delete that friend */
 #deleteFriend {
     background-color: black;
     color: white;
@@ -93,3 +98,14 @@
     margin-top: 0;
     margin-bottom: 10px;
 }
+
+/* formating for received and sent requests */
+.received button, .search button {
+    margin-left: 20px;
+}
+
+.received p, .sent p {
+    margin-top: 0;
+}
+
+
