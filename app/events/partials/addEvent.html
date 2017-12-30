@@ -36,9 +36,10 @@
             <textarea class="form_description" ng-model="newEvent.description"></textarea>
         </div>
 
-        <div>
+        <div class="privateEvent">
             <span class="form_label">Private:</span> 
             <input class="form_private" type="checkbox" value="true" ng-model="newEvent.private" />
+            <p class="privateText">Friends are not able to see your private events</p>
         </div>
 
         <button ng-click="addEvent(newEvent)">Add</button>

@@ -64,6 +64,18 @@
     width: 90%
 }
 
+/* only shows when the Private field is hovered over or the checkbox is checked */
+.privateText {
+    font-size: .8em;
+    margin-top: 0;
+    visibility: hidden;
+}
+
+
+.privateEvent:hover .privateText, .form_private:checked ~ .privateText{
+    visibility: visible;
+}
+
 /* specific to edit clapper */
 #trashIcon {
     width: 30px;
@@ -85,3 +97,5 @@
     border: 5px solid black;
     bottom: 0px;
 }
+
+
