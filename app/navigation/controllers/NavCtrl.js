@@ -8,6 +8,8 @@ angular.module("LifeReelApp").controller("NavCtrl",
     same name.
     */
 		$scope.isAuthenticated = () => AuthFactory.isAuthenticated()
+		$scope.notAuthenticated = () => AuthFactory.notAuthenticated()
+		
 
 
 		/*

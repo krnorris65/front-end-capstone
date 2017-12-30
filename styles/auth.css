@@ -1,0 +1,25 @@
+#companyName {
+    color:white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.authPage {
+    display: flex;
+}
+
+.authPage .clip {
+    margin: 5px;
+}
+
+.authButton {
+    color: black;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.authPage .authButton .film:hover {
+    background-color: white;
+    font-size: 1.5em;
+}

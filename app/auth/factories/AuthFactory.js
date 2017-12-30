@@ -29,6 +29,11 @@ angular.module("LifeReelApp")
 					return firebase.auth().currentUser ? true : false
 				}
 			},
+			notAuthenticated: {
+				value: () => {
+					return firebase.auth().currentUser ? false : true
+				}
+			},
 			getUser: {
 				value: () => {
 					return currentUserData

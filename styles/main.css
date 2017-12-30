@@ -39,7 +39,7 @@ nav > ul > li {
     padding: 5px;
 }
 
-nav a:not(#logo) {
+nav a:not(#logo){
     text-decoration: none;
     border: 2px solid white;
     color: white;
