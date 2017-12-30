@@ -1,5 +1,6 @@
 <h1 class="pageHeading">{{heading}}</h1>
 <section >
+    <!-- code for customizing your reel -->
     <div class="customizedReel">
         <h4 class="customizedTitle" ng-click="customReel = !customReel">{{subheading}}</h4>
         <div class="customOptions" ng-show="customReel">
@@ -37,7 +38,7 @@
         </div>
     </div>
     
-
+    <!-- code to display if there are no segments on your reel -->
     <div ng-if="eventArray.length === 0" class="clip">
         <div class="film">
             <h3>There are no segments on your reel</h3>
@@ -45,7 +46,7 @@
         </div>
     </div>
     
-    
+    <!-- code to display segments -->
     <div ng-repeat="segment in eventArray | orderBy: 'date'" class="clip" id="{{segment.eventId}}">
         <div class="film">
                 <h1 class="seg_date">{{segment.date | date:"longDate"}}</h1>
@@ -88,6 +89,7 @@
             <p class="seg_description">{{segment.description}}</p>
 
             <a class="seg_edit" href="#!/edit/{{segment.eventId}}"><img  src="../../../img/movieEdit.png" alt="edit/delete icon"/></a>
+            <img ng-if="segment.private === true" class="seg_private" src="../../../img/ticketBlack.png" alt="private event">
             
         </div>
 

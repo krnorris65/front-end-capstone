@@ -85,9 +85,16 @@
     z-index: 100;
 }
 
-.seg_edit img {
+.seg_edit img, .seg_private {
     width: 35px;
     height: 35px;
+}
+
+.seg_private {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    z-index: 100; 
 }
 
 .seg_description {
