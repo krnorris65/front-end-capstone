@@ -13,7 +13,7 @@
                 <br>
                 <button class="setButton" ng-click="setDates()">
                     Set Dates
-                    <p class="setText">Only show segments between these dates</p>
+                    <p class="setText hiddenText">Only show segments between these dates</p>
                 </button>
                 <button ng-click="clearDates()">Clear</button>
             </div>
@@ -21,13 +21,13 @@
     
                 <button class="highButton" ng-click="highlights()">
                     Show Highlights 
-                    <p class="highText">Only show segments with a rating of 3 or higher</p>
+                    <p class="highText hiddenText">Only show segments with a rating of 3 or higher</p>
                 </button>
                 
     
                 <button class="lowButton" ng-click="lowlights()">
                     Show Lowlights 
-                    <p class="lowText">Only show segments with a rating of 2 or lower</p>
+                    <p class="lowText hiddenText">Only show segments with a rating of 2 or lower</p>
                 </button>
                 
     
@@ -88,8 +88,17 @@
                 </div>
             <p class="seg_description">{{segment.description}}</p>
 
-            <a class="seg_edit" href="#!/edit/{{segment.eventId}}"><img  src="../../../img/movieEdit.png" alt="edit/delete icon"/></a>
-            <img ng-if="segment.private === true" class="seg_private" src="../../../img/ticketBlack.png" alt="private event">
+            <div class="editButton">
+                <a class="seg_edit" href="#!/edit/{{segment.eventId}}"><img  src="../../../img/movieEdit.png" alt="edit/delete icon"/></a>
+                <p class="edit">Edit/Delete Event</p>
+            </div>
+            
+
+            <div class="privateButton">
+                <img ng-if="segment.private === true" class="seg_private" src="../../../img/ticketBlack.png" alt="private event">
+                <p class="private">Private Event</p>
+            </div>
+            
             
         </div>
 

@@ -30,7 +30,7 @@
 }
 
 /* the css below will display a description of what pressing a button on the customize reel will do */
-.lowText, .highText, .setText {
+.hiddenText {
     display: none;
     width: 150px;
     background-color: black;
@@ -52,7 +52,7 @@
 }
 
 /* adds an arrow to the text bubble */
-.highText::after, .lowText::after, .setText::after {
+.highText::after, .lowText::after, .setText::after{
     content: " ";
     position: absolute;
     bottom: 100%;  /* At the top of the tooltip */
@@ -61,6 +61,7 @@
     border-style: solid;
     border-color: transparent transparent black transparent;
 }
+
 
 
 
