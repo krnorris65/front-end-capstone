@@ -35,10 +35,18 @@
             <span class="form_label">Description:</span> 
             <textarea class="form_description" ng-model="editEvent.description">{{event.description}}</textarea>
         </div>
+<!-- 
         <div>
             <span class="form_label">Private:</span> 
             <input class="form_private" type="checkbox" value="true" ng-checked="editEvent.private" ng-model="editEvent.private">
+        </div> -->
+
+        <div class="privateEvent">
+            <span class="form_label">Private:</span> 
+            <input class="form_private" type="checkbox" value="true" ng-checked="editEvent.private" ng-model="editEvent.private"/>
+            <p class="privateText">Friends are not able to see your private events</p>
         </div>
+
         <button ng-click="saveEvent(editEvent)">Save</button>
         <button ng-click="backToReel()">Cancel</button>
         <img id="trashIcon" src="../../../img/trashWhite.png" alt="delete trash can" ng-click="deleteThis = !deleteThis">
