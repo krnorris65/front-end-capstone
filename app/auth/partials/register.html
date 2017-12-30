@@ -3,23 +3,27 @@
     <div class="top"></div>
     <div class="bottom_top"></div>
     
-    <div class="bottom">
-        <h3>Please register your new account below</h3>
+    <div id="registerForm" class="bottom">
+        <h1>Please register your new account below</h1>
 
         <div>
-            <input type="text" placeholder="First Name" ng-model="user.first"  autofocus required>
+            <span class="auth_label">First Name:</span> 
+            <input class="auth_field" type="text" placeholder="First Name" ng-model="user.first"  autofocus required>
         </div>
         
         <div>
-            <input type="text" placeholder="Last Name" ng-model="user.last"  autofocus required>
+            <span class="auth_label">Last Name:</span> 
+            <input class="auth_field" type="text" placeholder="Last Name" ng-model="user.last"  autofocus required>
         </div>
         
         <div>
-            <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus required>
+            <span class="auth_label">Email:</span> 
+            <input class="auth_field" type="email" placeholder="Email address" ng-model="auth.email"  autofocus required>
         </div>
         
         <div>
-            <input type="password" placeholder="Password" ng-model="auth.password" required>
+            <span class="auth_label">Password:</span> 
+            <input class="auth_field" type="password" placeholder="Password" ng-model="auth.password" required>
         </div>
 
             <button ng-click="registerUser(auth, user)">Register</button>
