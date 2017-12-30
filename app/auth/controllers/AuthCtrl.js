@@ -32,4 +32,9 @@ angular.module("LifeReelApp")
 			$location.url("/auth")
 		}
 
+		//back to auth page
+		$scope.authPage = function(){
+			$location.url("/auth")
+		}
+
 	})

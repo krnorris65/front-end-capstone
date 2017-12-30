@@ -1,7 +1,16 @@
-<div>
-    <h3>Please log-in</h3>
-    <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus>
-    <input type="password" placeholder="Password" ng-model="auth.password">
-    <button ng-click="loginUser(auth)">Login</button>
-    <a href="#!/auth">Back</a>
-</div>
+<section class="clapper">
+        <div class="top"></div>
+        <div class="bottom_top"></div>
+    
+        <div class="bottom">
+                <h3>Please log-in</h3>
+                <div>
+                    <input type="email" placeholder="Email address" ng-model="auth.email"  autofocus>
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" ng-model="auth.password">
+                </div>
+                <button ng-click="loginUser(auth)">Login</button>
+                <button ng-click="authPage()">Cancel</button>
+        </div>
+</section>
