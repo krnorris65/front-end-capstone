@@ -46,18 +46,28 @@ angular.module("LifeReelApp")
 			},
 			authenticate: {
 				value: credentials => {
-					return firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)
-						.catch(function(error) {
-							alert(error)
-						})
+					try {
+						return firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)
+							.catch(function(error) {
+								alert(error)
+							})
+
+					} catch (ex) {
+							alert(ex)
+					}
 				}
 			},
 			registerWithEmail: {
 				value: user => {
-					return firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+					try {
+						return firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
 						.catch(function(error) {
 							alert(error)
 						})
+
+					} catch (ex) {
+							alert(ex)
+					}
 				}
 			}
 		})
