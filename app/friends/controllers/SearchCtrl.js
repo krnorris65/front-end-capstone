@@ -55,8 +55,10 @@ angular.module("LifeReelApp")
             
             //if no user found then alert user
             if(foundUsers.length === 0) {
-                alert("User not found")
-            } 
+                $scope.notFound = "User Not Found"
+            } else (
+                $scope.notFound = ""
+            )
         }
 
     }
@@ -65,6 +67,7 @@ angular.module("LifeReelApp")
     $scope.clearUsers = function () {
         $scope.userList = []
         $scope.searchString = ""
+        $scope.notFound = ""
     }
 
     //if user wants to add the person as a friend then it creates a friend relationship with a pending status of true and then clears the search results and search bar
