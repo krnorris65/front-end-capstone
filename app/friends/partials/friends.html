@@ -14,7 +14,11 @@
             </p>
             
             <!-- Trash Can Icon allows user to remove a friend from their friend list -->
-            <img src="../../../img/trashBlack.png" alt="delete friend" ng-click="deleteUser = !deleteUser" class="deleteFriend">
+            <section class="trashIcon">
+                    <img src="../../../img/trashBlack.png" alt="delete friend" class="deleteIcon trashBlack">
+                    <img src="../../../img/trashWhite.png" alt="delete friend" ng-click="deleteUser = !deleteUser" class="deleteIcon trashWhite">
+            </section>
+        
             <section id="deleteFriend" ng-show="deleteUser">
                 <p>Are you sure you want to remove {{friend.friendName}} from your friends? <br>You will no longer be able to view their Life Reel</p>
                 <button ng-click="removeFriend(friend)">Yes</button>
