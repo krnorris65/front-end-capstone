@@ -8,10 +8,10 @@
     border: 2px solid black;
     border-radius: 6px;
     padding: 10px; 
-    position: fixed; /* Sit on top of the screen */
-    z-index: 1; /* Add a z-index if needed */
-    left: 50%; /* Center the snackbar */
-    top: 150px; /* 150px from the top */
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    top: 150px; 
     font-size: 1.25em;
     font-weight: bold;
 }
