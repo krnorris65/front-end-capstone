@@ -17,16 +17,23 @@ angular.module("LifeReelApp")
             "private": false,
         }
 
-        const showSnackbar = () => {
+        const showSnackbar = (message) => {
             let snack = document.getElementById("snackbar")
                 // Add the "show" class to DIV
                 snack.className = "show"
+                $scope.snackText= message
+
+            // After 3 seconds, remove the show class from DIV
+            setTimeout(function(){ 
+                snack.className = snack.className.replace("show", "") 
+            }, 3000)
 
         }
+
         
         $scope.addEvent = (event) => {
             if($scope.date === undefined || $scope.rating === undefined || event.title === "") {
-                alert("Please add a title, date and rating")
+                showSnackbar("Please add a title, date and rating")
             } else {
                 event.date= Date.parse($scope.date) //parses the date into numeric value
                 event.rating = parseInt($scope.rating) //parses the value string to a number    
@@ -48,7 +55,7 @@ angular.module("LifeReelApp")
                 $scope.rating = ""
     
                 // shows snackbar that says a new segment has been added to the reel
-                showSnackbar()
+                showSnackbar("A new segment has been add to your reel")
                 
                 $timeout(() => {
                     $scope.backHome()
