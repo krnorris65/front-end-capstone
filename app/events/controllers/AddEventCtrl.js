@@ -21,10 +21,12 @@ angular.module("LifeReelApp")
             let snack = document.getElementById("snackbar")
                 // Add the "show" class to DIV
                 snack.className = "show"
+
+                //set the content of the snack bar to the text that is passed into the function
                 $scope.snackText= message
 
-            // After 3 seconds, remove the show class from DIV
-            setTimeout(function(){ 
+            // After 3 seconds, remove the show class so that the snackbar disappears
+            $timeout(() => { 
                 snack.className = snack.className.replace("show", "") 
             }, 3000)
 
