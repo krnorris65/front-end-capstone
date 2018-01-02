@@ -68,6 +68,10 @@ nav a:hover:not(#logo) {
     height: 45px;
 }
 
+#logoIcon:hover {
+    background-color: white;
+}
+
 
 body {
     font-family: 'Poppins', sans-serif;
