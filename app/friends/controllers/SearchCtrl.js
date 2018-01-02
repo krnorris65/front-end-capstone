@@ -35,6 +35,7 @@ angular.module("LifeReelApp")
 
     //searchs for user in firebase; will not return current user
     $scope.findUser = function (search) {
+
         //if user doesn't enter anything in the search bar then nothing is returned
         if(search !== "" && search !== undefined) {
             const searchedName = search.toLowerCase() //converts string to lowercase
