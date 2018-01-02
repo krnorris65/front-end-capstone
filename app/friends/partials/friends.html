@@ -7,13 +7,13 @@
                 <img src="../../../img/reelBlack.png" alt="view friend reel" class="friendReel">
                 <p class="viewFriendReel">View Reel</p>
             </a>
+
+
             <p class="friendName"> {{friend.friendName}} 
                 <i class="friendDate">Friends since {{friend.date | date:"shortDate"}}</i>
             </p>
-            <!-- <a href="#!/friends/reel/{{friend.friendUID}}" class="friendReel">View Reel</a> -->
-            <!-- <button ng-click="removeFriend(friend)">Remove Friend</button> -->
             
-            
+            <!-- Trash Can Icon allows user to remove a friend from their friend list -->
             <img src="../../../img/trashBlack.png" alt="delete friend" ng-click="deleteUser = !deleteUser" class="deleteFriend">
             <section id="deleteFriend" ng-show="deleteUser">
                 <p>Are you sure you want to remove {{friend.friendName}} from your friends? <br>You will no longer be able to view their Life Reel</p>

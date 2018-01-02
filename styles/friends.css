@@ -46,6 +46,7 @@
 }
 
 /* formating for current friends */
+
 .friendReel {
     width: 40px;
     height: 40px;
@@ -58,6 +59,7 @@
     width: 20px;
     height: 20px;
 }
+
 
 /* the css below will display a description of what pressing the reel icon will do */
 .viewFriendReel {
@@ -79,6 +81,11 @@
     display: initial;
     margin-left: 43px;
     margin-top: -77px;
+}
+
+.viewFriendIcon:hover .friendReel {
+    background-image: url("../img/reelBlackFilled.png");
+    background-size: 40px 40px;
 }
 
 /* formatting of delete friend text box to make sure person is sure they want to delete that friend */
@@ -108,5 +115,3 @@
 .received p, .sent p {
     margin-top: 0;
 }
-
-
