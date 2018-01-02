@@ -6,12 +6,12 @@
         <button ng-click="clearUsers()">Clear</button>
     </span>
     
-    <div ng-repeat="user in userList" class="friends, search">
+    <div ng-repeat="user in userList | orderBy: 'fullName'" class="friends, search">
         <p class="friendName">{{user.fullName}} 
             <i ng-if="user.pendingStatus === true" class="friendDate">Friend Request Sent on {{user.dateSent | date:"shortDate"}}</i>
             <i ng-if="user.pendingStatus === false" class="friendDate">Current Friend</i>
         </p>
-        <button ng-click="addFriend(user)" ng-if="user.pendingStatus !== true &&user.pendingStatus !== false">Add as Friend</button>
+        <button ng-click="addFriend(user)" ng-if="user.pendingStatus !== true && user.pendingStatus !== false">Add as Friend</button>
         
     </div>
     <div>
