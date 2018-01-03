@@ -83,6 +83,10 @@ body {
     margin-bottom: 50px;
 }
 
+.loginPage {
+    padding-top: 25px;
+}
+
 button {
     background-color: lightgray;
     color: black;
