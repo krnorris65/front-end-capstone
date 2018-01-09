@@ -25,5 +25,3 @@ But a lot of things can happen in a year and it's not always easy to remember ev
 * Javascript/JQuery
 * HTML/CSS
 * Firebase
-
-### Created By Kristen Norris
