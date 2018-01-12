@@ -104,3 +104,45 @@ button:active {
 .pageHeading {
     text-align: center;
 }
+
+@media only screen and (max-width:320px){
+    body{
+        background-color: green;
+    }
+
+    nav, footer {
+        max-width: 320px;
+    }
+    
+    .align-left{
+        left: 2px;
+    }
+
+    .align-right{
+        right: 2px;
+    }
+
+    footer span {
+        color: white;
+        margin-right: 10px;
+        font-size: .9em;
+    }
+
+    nav > ul {
+        margin: 2px;
+        flex-flow:inherit;
+        justify-content:left;
+        margin-left: 50px;
+    }
+
+
+    nav > ul > li {
+        margin: 0 1px;
+    }
+
+    nav a:not(#logo){
+        font-size: .8em;
+        padding: 1px;
+    }
+
+}
