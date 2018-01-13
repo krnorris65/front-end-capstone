@@ -151,5 +151,8 @@
     .seg_private {
       top: 2px;
     }
-    
+
+    .privateButton:hover .private, .editButton:hover .edit {
+        display: none;
+    }
 }

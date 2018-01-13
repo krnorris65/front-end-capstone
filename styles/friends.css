@@ -131,3 +131,9 @@
 .received p, .sent p {
     margin-top: 0;
 }
+
+@media only screen and (max-width: 320px){
+    .addFriend, .currentList, .addSegment {
+        font-size: .75em;
+    }
+}

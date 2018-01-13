@@ -47,6 +47,10 @@ nav a:not(#logo){
     border: 2px solid white;
 }
 
+nav a#logout {
+    border: none;
+}
+
 nav a:hover:not(#logo) {
     background-color: white;
     color: black
@@ -107,9 +111,6 @@ button:active {
 }
 
 @media only screen and (max-width:320px){
-    body{
-        background-color: orange;
-    }
 
     .content{
         margin-top: 90px;
@@ -142,6 +143,10 @@ button:active {
         margin: 0 7.5px;
         line-height: .95em;
         border: 2px solid white;
+    }
+
+    nav > ul > li:last-child {
+        border: none;
     }
 
 

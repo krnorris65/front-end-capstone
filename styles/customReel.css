@@ -2,7 +2,7 @@
     text-align: left;
     width: 60%;
     margin: auto;
-    min-width: 350px;
+    min-width: 300px;
 }
 
 .customOptions {
@@ -60,6 +60,14 @@
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent black transparent;
+}
+
+@media only screen and (max-width: 320px){
+
+    .highButton:hover .highText, .lowButton:hover .lowText, .setButton:hover .setText {
+        display: none;
+    
+    }
 }
 
 
