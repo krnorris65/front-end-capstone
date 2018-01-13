@@ -135,7 +135,7 @@
     height: 40px;
 }
 
-@media only screen and (max-width:320px){
+@media only screen and (max-width:425px){
     
     .stars, .seg_edit img, .seg_private {
         width: 25px;
@@ -155,4 +155,19 @@
     .privateButton:hover .private, .editButton:hover .edit {
         display: none;
     }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 425px){
+    .clip{
+        min-width: 350px;
+    }
+    
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px){
+    .film{
+         padding-top: 10%;
+
+    }
+    
 }

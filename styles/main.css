@@ -169,9 +169,6 @@ button:active {
 }
 
 @media only screen and (min-width:321px) and (max-width:375px){
-    body {
-        background-color: orange;
-    }
 
     nav > ul {
         margin-left: 80px;
@@ -180,9 +177,7 @@ button:active {
 }
 
 @media only screen and (min-width:376px) and (max-width:425px){
-    body {
-        background-color: green;
-    }
+
     nav > ul {
         margin-left: 110px;
     }

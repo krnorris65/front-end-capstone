@@ -132,7 +132,7 @@
     margin-top: 0;
 }
 
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 425px){
     .addFriend, .currentList, .addSegment {
         font-size: .75em;
     }

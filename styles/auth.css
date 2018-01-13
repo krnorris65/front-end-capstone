@@ -12,6 +12,7 @@
     margin: 5px;
 }
 
+
 .authButton {
     color: black;
     font-weight: bold;
@@ -36,17 +37,28 @@
     margin-bottom: 5px;
 }
 
-@media only screen and (max-width:320px){
-
-    .authPage{
-        display: initial;
+@media only screen and (max-width:425px){
+    
+        .authPage{
+            display: initial;
+        }
+    
+        .authPage .clip {
+          margin:0px;
+    
+        }
+        .authPage .film {
+            padding-top: 0%;
+        }
+    
+        #companyName {
+            border: none;
+        }
     }
-
-    .authPage .film {
-        padding-top: 0%;
-    }
-
-    #companyName {
-        border: none;
+    
+@media only screen and (min-width:425px) and (max-width: 425px){
+    .authPage .clip {
+        width: 50%;
+        left: 8%;
     }
 }

@@ -8,6 +8,7 @@
     background-color: black;
     min-height: 275px;
     min-width: 300px;
+    max-width: 500px;
     width: 60%;
     text-align: center;
     padding-top: 1%;
@@ -37,6 +38,7 @@
         96%;
     min-height: 55px;
     min-width: 300px;
+    max-width: 500px;    
     width: 60%;
     border: 1px solid black;
     position: relative;
