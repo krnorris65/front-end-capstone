@@ -20,3 +20,14 @@
 #snackbar.show {
     visibility: visible; /* Show the snackbar */
 }
+
+@media only screen and (max-width:320px){
+    #snackbar{
+        min-width: 300px;
+        padding: 8px;
+        font-size: 1em;
+        left: 175px;
+        top: initial;
+        bottom: 35px;
+    }  
+}

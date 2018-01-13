@@ -1,6 +1,6 @@
 .clip {
     width: 60%;
-    min-width: 350px;
+    min-width: 300px;
     min-height: 80px;
     margin: auto;
     padding-top: 25%;
@@ -133,4 +133,25 @@
 .stars {
     width: 40px;
     height: 40px;
+}
+
+@media only screen and (max-width:320px){
+    
+    .stars, .seg_edit img, .seg_private {
+        width: 25px;
+        height: 25px;
+    }
+
+    .film{
+        font-size: .8em;
+    }
+
+    .seg_date {
+        margin-top: 50px;
+    }
+    
+    .seg_description{
+      height: 40px;
+    }
+       
 }

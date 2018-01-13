@@ -37,13 +37,14 @@ nav > ul > li:not(:nth-child(1)) {
     list-style-type: none;
     margin: 0 10px;
     padding: 5px;
-    border: 2px solid white;
 
 }
 
 nav a:not(#logo){
     text-decoration: none;
     color: white;
+    padding: 5px;
+    border: 2px solid white;
 }
 
 nav a:hover:not(#logo) {
@@ -107,9 +108,13 @@ button:active {
 
 @media only screen and (max-width:320px){
     body{
-        background-color: green;
+        background-color: orange;
     }
 
+    .content{
+        margin-top: 90px;
+    }
+    
     nav, footer {
         max-width: 320px;
     }
@@ -121,6 +126,7 @@ button:active {
 
     footer{
         text-align: center;
+        font-size: .8em;
     }
 
 
@@ -135,8 +141,9 @@ button:active {
         padding: 2px;
         margin: 0 7.5px;
         line-height: .95em;
-
+        border: 2px solid white;
     }
+
 
     .view-reel{
         width: 35px;
@@ -146,6 +153,13 @@ button:active {
     nav a:not(#logo){
         font-size: .8em;
         padding: 1px;
+        border:  none;
     }
+    
+    nav a:hover:not(#logo){
+        background-color: black;
+        color: white;
+    }
+
 
 }
