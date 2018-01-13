@@ -143,15 +143,13 @@
     }
 
     .film{
-        font-size: .8em;
+        font-size: .75em;
+         padding-top: 20%;
+
     }
 
-    .seg_date {
-        margin-top: 50px;
+    .seg_private {
+      top: 2px;
     }
     
-    .seg_description{
-      height: 40px;
-    }
-       
 }
