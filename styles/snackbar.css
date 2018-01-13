@@ -21,7 +21,7 @@
     visibility: visible; /* Show the snackbar */
 }
 
-@media only screen and (max-width:320px){
+@media only screen and (min-width:320px) and (max-width:425px){
     #snackbar{
         min-width: 300px;
         padding: 8px;
@@ -31,3 +31,23 @@
         bottom: 35px;
     }  
 }
+
+@media only screen and (min-width:321px) and (max-width:375px){
+    
+    #snackbar{
+        min-width: 320px;
+        left: 195px;
+    } 
+    
+}
+
+
+@media only screen and (min-width:376px) and (max-width:425px){
+    
+    #snackbar{
+        min-width: 350px;
+        left: 205px;
+    } 
+    
+}
+    

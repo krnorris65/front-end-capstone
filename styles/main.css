@@ -14,14 +14,11 @@ nav {
 
 footer {
     bottom: 0;
-    text-align: right;
-}
-
-footer span {
+    text-align: center;
     color: white;
-    margin-right: 10px;
     font-size: .9em;
 }
+
 
 nav > ul {
     padding: 10px;
@@ -110,14 +107,17 @@ button:active {
     text-align: center;
 }
 
-@media only screen and (max-width:320px){
+
+
+@media only screen and (min-width:320px) and (max-width:425px){
 
     .content{
         margin-top: 90px;
     }
     
     nav, footer {
-        max-width: 320px;
+        min-width: 320px;
+        max-width: 425px;
     }
 
 
@@ -126,7 +126,6 @@ button:active {
     }
 
     footer{
-        text-align: center;
         font-size: .8em;
     }
 
@@ -166,5 +165,26 @@ button:active {
         color: white;
     }
 
+
+}
+
+@media only screen and (min-width:321px) and (max-width:375px){
+    body {
+        background-color: orange;
+    }
+
+    nav > ul {
+        margin-left: 80px;
+    }
+
+}
+
+@media only screen and (min-width:376px) and (max-width:425px){
+    body {
+        background-color: green;
+    }
+    nav > ul {
+        margin-left: 110px;
+    }
 
 }
