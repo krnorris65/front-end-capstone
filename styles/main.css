@@ -33,17 +33,17 @@ nav > ul {
 }
 
 
-nav > ul > li {
+nav > ul > li:not(:nth-child(1)) {
     list-style-type: none;
     margin: 0 10px;
     padding: 5px;
+    border: 2px solid white;
+
 }
 
 nav a:not(#logo){
     text-decoration: none;
-    border: 2px solid white;
     color: white;
-    padding: 5px;
 }
 
 nav a:hover:not(#logo) {
@@ -113,20 +113,16 @@ button:active {
     nav, footer {
         max-width: 320px;
     }
-    
-    .align-left{
-        left: 2px;
-    }
+
 
     .align-right{
         right: 2px;
     }
 
-    footer span {
-        color: white;
-        margin-right: 10px;
-        font-size: .9em;
+    footer{
+        text-align: center;
     }
+
 
     nav > ul {
         margin: 2px;
@@ -135,9 +131,16 @@ button:active {
         margin-left: 50px;
     }
 
+    nav > ul > li:not(:nth-child(1)) {
+        padding: 2px;
+        margin: 0 7.5px;
+        line-height: .95em;
 
-    nav > ul > li {
-        margin: 0 1px;
+    }
+
+    .view-reel{
+        width: 35px;
+        text-align: center;
     }
 
     nav a:not(#logo){
