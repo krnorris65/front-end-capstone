@@ -1,0 +1,10 @@
+{
+    "hosting": {
+      "public": "Life-Reel",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  }
